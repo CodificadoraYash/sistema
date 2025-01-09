@@ -1,0 +1,276 @@
+/* PRIMERA SECCION*/
+.productos {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: #3B98EF;
+}
+
+.productos h1 {
+    font-size: 3em;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.productos .categoria {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.productos .item {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 20px 0;
+}
+
+/* Efecto hover en el nombre del producto */
+.productos .item:hover {
+    color: #3B98EF;
+}
+
+/* Responsividad para pantallas pequeñas: oculta las categorías */
+@media (max-width: 480px) {
+    .productos .categoria {
+        display: none; /* Oculta la sección de categorías en pantallas pequeñas */
+    }
+
+    .productos h1 {
+        font-size: 2em; /* Ajusta el tamaño del encabezado */
+    }
+}
+
+
+
+
+
+/* SEGUNDA SECCION*/
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 30px;
+}
+
+.product-item {
+    text-align: center;
+}
+
+.product-card {
+    background: white;
+    padding: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 12px 24px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+    height: 400px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    border-radius: 30px;
+    border: 10px solid black;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: white;
+    font-family: Arial, sans-serif; /* Cambia la fuente a Arial */
+    font-size: 30px; /* Texto más grande */
+    font-weight: 900; /* Texto más grueso */
+    border-radius: 2px;
+    text-align: center;
+}
+
+/* Efecto hover */
+.product-card:hover .product-overlay {
+    opacity: 1;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Cambia a dos columnas en pantallas pequeñas */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .product-card {
+        height: 300px; /* Ajusta la altura para pantallas pequeñas */
+    }
+
+    .product-overlay {
+        font-size: 20px; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Cambia a una columna en pantallas extra pequeñas */
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .product-card {
+        height: 250px; /* Ajusta aún más la altura */
+    }
+
+    .product-overlay {
+        font-size: 18px; /* Ajusta el tamaño del texto para pantallas extra pequeñas */
+    }
+}
+
+
+
+
+
+/* TERCERA SECCION */
+.carrito-seccion {
+    background-color: black;
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icono del carrito más grande */
+.carrito-icono {
+    color: #3B98EF;
+    font-size: 90px;
+    position: absolute;
+    animation: moverCarrito 6s linear infinite;
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Efecto 3D más notable en las llantas del carrito */
+.carrito-icono::before,
+.carrito-icono::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #333;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9), 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.carrito-icono::before {
+    left: 20px;
+}
+
+.carrito-icono::after {
+    right: 20px;
+}
+
+/* Efecto de humo detrás del carrito */
+.carrito-seccion::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    animation: humo 1.5s linear infinite;
+    opacity: 0.6;
+}
+
+/* Texto de envíos */
+.texto-envio {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    opacity: 0;
+    animation: aparecerTexto 6s linear infinite;
+}
+
+/* Animación de aparición y desaparición del texto */
+@keyframes aparecerTexto {
+    0%, 66.7% {
+        opacity: 1;
+    }
+    66.7%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Animación de movimiento de izquierda a derecha */
+@keyframes moverCarrito {
+    0% {
+        left: -80px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Animación del humo */
+@keyframes humo {
+    0% {
+        transform: translateX(0) scale(0.5);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateX(50px) scale(1.2);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateX(100px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 600px) {
+    .carrito-seccion {
+        height: 100px; /* Ajuste de altura en pantallas pequeñas */
+    }
+    
+    .carrito-icono {
+        font-size: 60px; /* Ajuste de tamaño del icono */
+    }
+    
+    .texto-envio {
+        font-size: 20px; /* Ajuste del tamaño del texto */
+    }
+    
+    .carrito-icono::before,
+    .carrito-icono::after {
+        width: 10px; /* Ajuste del tamaño de las llantas */
+        height: 10px;
+    }
+    
+    .carrito-seccion::before {
+        width: 15px; /* Ajuste del tamaño del humo */
+        height: 15px;
+    }
+}

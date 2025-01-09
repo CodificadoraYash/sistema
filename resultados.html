@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para la barra de encabezado */
+        .header-bar {
+            background-color: #3B98EF;
+            /* Fondo celeste */
+            color: white;
+            /* Texto blanco para el resto */
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2em;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo especial para "Resultados encontrados" */
+        .header-bar .texto-servicio {
+            font-family: Arial, sans-serif;
+            font-size: 40px;
+            /* Tamaño grande para un efecto más impactante */
+            font-weight: 900;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            text-shadow:
+                2px 2px 0 #000000,
+                /* Sombra negra detrás de la letra */
+                4px 4px 0 #666666,
+                /* Segunda sombra gris para mayor profundidad */
+                6px 6px 0 #333333;
+            /* Tercera sombra para un efecto 3D */
+        }
+
+        /* Estilos para las tarjetas de productos */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            background-color: #3B98EF;
+            /* Fondo celeste */
+        }
+
+        .product-item {
+            text-align: center;
+            color: white;
+            /* Texto blanco para títulos */
+        }
+
+        /* Estilos para las tarjetas de productos */
+        .product-card {
+            background: white;
+            border: 4px solid black;
+            /* Borde negro grueso */
+            border-radius: 45px;
+            padding: 0;
+            box-shadow:
+                0 8px 16px rgba(0, 0, 0, 0.3),
+                /* Sombra negra adicional */
+                0 12px 24px rgba(0, 0, 0, 0.3);
+            /* Segunda sombra para mayor profundidad */
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 45px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+            box-shadow: 0 20px 40px rgba(0, 128, 255, 0.4);
+        }
+
+        /* Estilo de los textos encima de la tarjeta */
+        .product-title,
+        .product-description {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            font-family: Arial, sans-serif;
+            /* Fuente Arial */
+            color: white;
+            /* Texto blanco para el resto */
+            text-shadow:
+                0 8px 16px rgba(0, 0, 0, 0.3),
+                /* Sombra negra adicional */
+                0 12px 24px rgba(0, 0, 0, 0.3);
+            /* Segunda sombra para mayor profundidad */
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 900;
+            margin: 10px 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #3B98EF;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de encabezado con el título de "Resultados encontrados" -->
+    <div class="header-bar">
+        <span class="texto-servicio">RESULTADOS ENCONTRADOS </span>
+    </div>
+
+    <section class="product-grid" id="resultados-container">
+        <!-- Aquí se mostrarán las tarjetas de productos encontrados -->
+    </section>
+
+    <!-- Incluir jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Obtener los IDs de los productos desde la URL
+            const params = new URLSearchParams(window.location.search);
+            const productIds = params.get('productos');
+
+            if (productIds === 'none') {
+                // Mostrar mensaje de "No existen resultados"
+                $('#resultados-container').html('<p style="color: white; text-align: center; font-size: 24px;">No existen resultados</p>');
+            } else {
+                const idsArray = productIds.split(',');
+
+                const productos = [
+                    { id: 'adaptador-rosca-hembra', name: 'ADAPTADOR ROSCA HEMBRA', image: 'img/Acople 01.png' },
+                    { id: 'adaptador-rosca-macho', name: 'ADAPTADOR ROSCA MACHO', image: 'img/ACOPLE 02.png' },
+                    { id: 'codo-90-rosca-hembra', name: 'CODO DE 90 ROSCA HEMBRA', image: 'img/Acople 03.png' },
+                    { id: 'codo-90-rosca-macho', name: 'CODO DE 90 ROSCA MACHO', image: 'img/Acople 04.png' },
+                    { id: 'codo-90', name: 'CODO DE 90', image: 'img/Acople 05.png' },
+                    { id: 'reduccion', name: 'REDUCCIÓN', image: 'img/Acople 06.png' },
+                    { id: 'tee', name: 'TEE', image: 'img/Acople 07.png' },
+                    { id: 'tee-rosca-hembra', name: 'TEE ROSCA HEMBRA', image: 'img/Acople 08.png' },
+                    { id: 'tee-rosca-macho', name: 'TEE ROSCA MACHO', image: 'img/Acople 09.png' },
+                    { id: 'union-o-coupling', name: 'UNION O COUPLING', image: 'img/Acople 10.png' },
+                    { id: 'valvula-esferica', name: 'VALVULA ESFERICA', image: 'img/Acople 11.png' },
+                    { id: 'cemento-cpvc-naranja-8613', name: 'CEMENTO CPVC NARANJA 8613', image: 'img/Cemento 01.png' },
+                    { id: 'cemento-pvc-azul-l6453', name: 'CEMENTO PVC AZUL L-6453 BAILEY', image: 'img/Cemento 02.png' },
+                    { id: 'cemento-pvc-dorado-l3010', name: 'CEMENTO PVC DORADO L-3010 BAILEY', image: 'img/Cemento 03.png' },
+                    { id: 'cemento-pvc-gris-l5125', name: 'CEMENTO PVC GRIS L-5125 BAILEY', image: 'img/Cemento 04.png' },
+                    { id: 'cemento-pvc-l5023', name: 'CEMENTO PVC L-5023 BAILEY', image: 'img/Cemento 05.png' },
+                    { id: 'cemento-pvc-l6023', name: 'CEMENTO PVC L-6023 BAILEY', image: 'img/Cemento 06.png' },
+                    { id: 'primador-p1030', name: 'PRIMADOR P-1030 BAILEY', image: 'img/Cemento 07.png' },
+                    { id: 'asiento-hdpe', name: 'ASIENTO HDPE', image: 'img/HDPE 01.png' },
+                    { id: 'campana-hdpe-bes', name: 'CAMPANA HDPE BES+', image: 'img/HDPE 02.png' },
+                    { id: 'codo-22-hdpe-kit', name: 'CODO DE 22.5 KIT HDPE', image: 'img/HDPE 03.png' },
+                    { id: 'codo-22-hdpe-bes', name: 'CODO DE 22.5 HDPE BES+', image: 'img/HDPE 04.png' },
+                    { id: 'codo-45-hdpe-bes', name: 'CODO DE 45 HDPE BES+', image: 'img/HDPE 05.png' },
+                    { id: 'codo-45-hdpe-borfit', name: 'CODO DE 45 HDPE BORFIT', image: 'img/HDPE 06.png' },
+                    { id: 'codo-45-hdpe-bes-2', name: 'CODO DE 45 HDPE BES+', image: 'img/HDPE 07.png' },
+                    { id: 'codo-90-hdpe-bes', name: 'CODO DE 90 HDPE BES+', image: 'img/HDPE 08.png' },
+                    { id: 'codo-90-hdpe-borfit', name: 'CODO DE 90 HDPE BORFIT', image: 'img/HDPE 09.png' },
+                    { id: 'codo-90-hdpe-bes-2', name: 'CODO DE 90 HDPE BES+', image: 'img/HDPE 10.png' },
+                    { id: 'contratuerca-liviana-hdpe-ld', name: 'CONTRATUERCA LIVIANA HDPE LD', image: 'img/HDPE 11.png' },
+                    { id: 'cruceta-termo-hdpe-bes', name: 'CRUCETA TERMOFUSION HDPE BES+', image: 'img/HDPE 12.png' },
+                    { id: 'reduccion-campana-bes', name: 'REDUCCION CAMPANA BES+', image: 'img/HDPE 13.png' },
+                    { id: 'reduccion-campana-borfit', name: 'REDUCCION CAMPANA BORFIT', image: 'img/HDPE 14.png' },
+                    { id: 'reduccion-campana-bes-2', name: 'REDUCCION CAMPANA BES+', image: 'img/HDPE 15.png' },
+                    { id: 'stub-end-bes', name: 'STUB END BES+', image: 'img/HDPE 16.png' },
+                    { id: 'tapon-termo-hdpe-bes', name: 'TAPON TERMOFUSION HDPE BES+', image: 'img/HDPE 17.png' },
+                    { id: 'tee-hdpe-electro-bes', name: 'TEE HDPE ELECTROFUSION BES+', image: 'img/HDPE 18.png' },
+                    { id: 'tee-hdpe-electro-borfit', name: 'TEE HDPE ELECTROFUSION BORFIT', image: 'img/HDPE 19.png' },
+                    { id: 'tee-termo-hdpe-bes', name: 'TEE TERMOFUSION HDPE BES+', image: 'img/HDPE 20.png' },
+                    { id: 'union-coupling-hdpe', name: 'UNION COUPLING HDPE', image: 'img/HDPE 21.png' },
+                    { id: 'union-coupling-hdpe-borfit', name: 'UNION COUPLING HDPE BORFIT', image: 'img/HDPE 22.png' },
+                    { id: 'valvula-aire-doble-efecto', name: 'VALVULA DE AIRE DOBLE EFECTO', image: 'img/HDPE 23.png' },
+                    { id: 'valvula-aire-economico', name: 'VALVULA DE AIRE ECONOMICO', image: 'img/HDPE 24.png' },
+                    { id: 'valvula-aire-simple-efecto', name: 'VALVULA DE AIRE SIMPLE EFECTO', image: 'img/HDPE 25.png' },
+                    { id: 'yee-termo-hdpe-bes', name: 'YEE TERMOFUSION HDPE BES+', image: 'img/HDPE 26.png' },
+                    { id: 'codo-45-pp', name: 'CODO DE 45 PP', image: 'img/PPH 01.png' },
+                    { id: 'codo-90-injerto-pp', name: 'CODO DE 90 CON INJETO PP', image: 'img/PPH 02.png' },
+                    { id: 'reduccion-excentrica-pp', name: 'REDUCCION EXCENTRICA PP PESTAN', image: 'img/PPH 03.png' },
+                    { id: 'codo-90-pp', name: 'CODO DE 90 PP', image: 'img/PPH 04.png' },
+                    { id: 'contratuerca-tanque-pp', name: 'CONTRATUERCA PARA TANQUE PP', image: 'img/PPH 05.png' },
+                    { id: 'llave-ducha-campana', name: 'LLAVE DE DUCHA CON CAMPANA', image: 'img/PPH 06.png' },
+                    { id: 'niple-pp', name: 'NIPLE PP', image: 'img/PPH 07.png' },
+                    { id: 'reduccion-campana-pp', name: 'REDUCCION CAMPANA PP', image: 'img/PPH 08.png' },
+                    { id: 'tapon-hembra-pp', name: 'TAPON HEMBRA PP', image: 'img/PPH 09.png' },
+                    { id: 'yee-pp', name: 'YEE PP PESTAN', image: 'img/PPH 10.png' },
+                    { id: 'terraja-tubo-pp', name: 'TERRAJA PARA TUBO PP', image: 'img/PPH 11.png' },
+                    { id: 'union-cupla-pp', name: 'UNION O CUPLA PP', image: 'img/PPH 12.png' },
+                    { id: 'union-universal-pp', name: 'UNION UNIVERSAL PP', image: 'img/PPH 13.png' },
+                    { id: 'codo-45-pph', name: 'CODO DE 45 PPH PESTAN', image: 'img/PP 01.png' },
+                    { id: 'codo-90-pph', name: 'CODO DE 90 PPH PESTAN', image: 'img/PP 02.png' },
+                    { id: 'reduccion-excentrica-pph', name: 'REDUCCION EXCENTRICA PPH PESTAN', image: 'img/PP 03.png' },
+                    { id: 'tapon-hembra-pph', name: 'TAPON HEMBRA PPH PESTAN', image: 'img/PP 04.png' },
+                    { id: 'tee-registro-pph', name: 'TEE CON REGISTRO PPH PESTAN', image: 'img/PP 05.png' },
+                    { id: 'tee-pph', name: 'TEE PPH PESTAN', image: 'img/PP 06.png' },
+                    { id: 'tubo-pph', name: 'TUBO PPH PESTAN', image: 'img/PP 07.png' },
+                    { id: 'union-pph', name: 'UNION PPH PESTAN', image: 'img/PP 08.png' },
+                    { id: 'yee-pph', name: 'YEE PPH PESTAN', image: 'img/PP 09.png' },
+                    { id: 'adaptador-hembra', name: 'ADAPTADOR HEMBRA FUSION PPR', image: 'img/PPR 01.png' },
+                    { id: 'adaptador-macho', name: 'ADAPTADOR MACHO FUSION PPR', image: 'img/PPR 02.png' },
+                    { id: 'check-fusion', name: 'CHECK FUSION PPR', image: 'img/PPR 03.png' },
+                    { id: 'codo-45', name: 'CODO DE 45 FUSION PPR', image: 'img/PPR 04.png' },
+                    { id: 'codo-90-injerto', name: 'CODO DE 90 CON INJERTO FUSION', image: 'img/PPR 05.png' },
+                    { id: 'codo-90', name: 'CODO DE 90 FUSION PPR', image: 'img/PPR 06.png' },
+                    { id: 'niple', name: 'NIPLE PPR', image: 'img/PPR 07.png' },
+                    { id: 'curva', name: 'CURVA FUSION PPR', image: 'img/PPR 08.png' },
+                    { id: 'filtro-yee', name: 'FILTRO YEE FUSION PPR', image: 'img/PPR 09.png' },
+                    { id: 'llave-paso', name: 'LLAVE DE PASO PESADA FUSION PPR', image: 'img/PPR 10.png' },
+                    { id: 'montura', name: 'MONTURA FUSION PPR', image: 'img/PPR 11.png' },
+                    { id: 'reduccion-campana', name: 'REDUCCION CAMPANA FUSION PPR', image: 'img/PPR 12.png' },
+                    { id: 'stub-end', name: 'STUB END FUSION PPR', image: 'img/PPR 13.png' },
+                    { id: 'tee-fusion', name: 'TEE FUSION PPR', image: 'img/PPR 14.png' },
+                    { id: 'tee-reduccion', name: 'TEE REDUCCION FUSION PPR', image: 'img/PPR 15.png' },
+                    { id: 'tee-sanitaria', name: 'TEE SANITARIA FUSION PPR', image: 'img/PPR 16.png' },
+                    { id: 'union-coupling', name: 'UNION O COUPLING FUSION PPR', image: 'img/PPR 17.png' },
+                    { id: 'union-universal-metal', name: 'UNION UNIVERSAL DE METAL', image: 'img/PPR 18.png' },
+                    { id: 'valvula-compuerta', name: 'VALVULA COMPUERTA FUSION PPR', image: 'img/PPR 19.png' },
+                    { id: 'valvula-aire', name: 'VALVULA DE AIRE FUSION PPR', image: 'img/PPR 20.png' },
+                    { id: 'valvula-esferica-metal', name: 'VALVULA ESFERICA DE METAL', image: 'img/PPR 21.png' },
+                    { id: 'adaptador-sch-80-pvc-lesso', name: 'ADAPTADOR SCH-80 PVC LESSO', image: 'img/PVC 01.png' },
+                    { id: 'brida-fija-sch-80-pvc-era', name: 'BRIDA FIJA SCH-80 PVC ERA', image: 'img/PVC 02.png' },
+                    { id: 'brida-loca-sch-80-pvc-era', name: 'BRIDA LOCA SCH-80 PVC ERA', image: 'img/PVC 03.png' },
+                    { id: 'buge-pvc-mixto-lesso', name: 'BUGE PVC MIXTO LESSO', image: 'img/PVC 04.png' },
+                    { id: 'bushing-o-buge-con-rosca-pvc', name: 'BUSHING O BUGE CON ROSCA PVC', image: 'img/PVC 05.png' },
+                    { id: 'check-bola-doble-era', name: 'CHECK BOLA CON DOBLE ERA', image: 'img/PVC 06.png' },
+                    { id: 'check-bola-una-universal', name: 'CHECK BOLA CON UNA UNIVERSAL', image: 'img/PVC 07.png' },
+                    { id: 'check-capleta-pvc', name: 'CHECK CAPLETA PVC', image: 'img/PVC 08.png' },
+                    { id: 'check-paleta-pvc-era', name: 'CHECK PALETA PVC ERA', image: 'img/PVC 09.png' },
+                    { id: 'check-resorte-pvc-era', name: 'CHECK RESORTE PVC ERA', image: 'img/PVC 10.png' },
+                    { id: 'codo-45-sch-80-presion', name: 'CODO DE 45° SCH-80 A PRESION', image: 'img/PVC 11.png' },
+                    { id: 'codo-45-sch-80-rosca', name: 'CODO DE 45° SCH-80 CON ROSCA', image: 'img/PVC 12.png' },
+                    { id: 'codo-90-pvc-mixto-lesso', name: 'CODO DE 90° PVC MIXTO LESSO', image: 'img/PVC 13.png' },
+                    { id: 'codo-90-sch-80-presion', name: 'CODO DE 90° SCH-80 A PRESION', image: 'img/PVC 14.png' },
+                    { id: 'codo-90-sch-80-rosca', name: 'CODO DE 90° SCH-80 CON ROSCA', image: 'img/PVC 15.png' },
+                    { id: 'cruceta-sch-80-presion-lesso', name: 'CRUCETA SCH-80 A PRESION LESSO', image: 'img/PVC 16.png' },
+                    { id: 'niple-fabrica-dado-pvc', name: 'NIPLE DE FABRICA CON DADO PVC', image: 'img/PVC 17.png' },
+                    { id: 'reduccion-buge-sch-80-pvc', name: 'REDUCCION BUGE SCH-80 PVC', image: 'img/PVC 18.png' },
+                    { id: 'reduccion-campana', name: 'REDUCCION CAMPANA SCH-80 PVC', image: 'img/PVC 19.png' },
+                    { id: 'tapon-hembra-a-presion', name: 'TAPON HEMBRA SCH-80 A PRESION', image: 'img/PVC 20.png' },
+                    { id: 'tapon-hembra-con-rosca', name: 'TAPON HEMBRA SCH-80 CON ROSCA', image: 'img/PVC 21.png' },
+                    { id: 'tapon-macho-con-rosca', name: 'TAPON MACHO SCH-80 CON ROSCA', image: 'img/PVC 22.png' },
+                    { id: 'tee-pvc-mixto', name: 'TEE PVC MIXTO LESSO', image: 'img/PVC 23.png' },
+                    { id: 'tee-reduccion-a-presion', name: 'TEE REDUCCION SCH-80 A PRESION', image: 'img/PVC 24.png' },
+                    { id: 'tee-a-presion', name: 'TEE SCH-80 A PRESION PVC LESSO', image: 'img/PVC 25.png' },
+                    { id: 'tee-con-rosca', name: 'TEE SCH-80 CON ROSCA PVC LESSO', image: 'img/PVC 26.png' },
+                    { id: 'tricodo-a-presion', name: 'TRICODO SCH-80 A PRESION PVC', image: 'img/PVC 27.png' },
+                    { id: 'union-coupling-mixto', name: 'UNION COUPLING PVC MIXTO LESSO', image: 'img/PVC 28.png' },
+                    { id: 'union-a-presion', name: 'UNION SCH-80 A PRESION PVC LESSO', image: 'img/PVC 29.png' },
+                    { id: 'union-con-rosca', name: 'UNION SCH-80 CON ROSCA PVC', image: 'img/PVC 30.png' },
+                    { id: 'union-universal', name: 'UNION UNIVERSAL SCH-80 PVC', image: 'img/PVC 31.png' },
+                    { id: 'valvula-doble-union', name: 'VALVULA CON DOBLE UNION SCH-80', image: 'img/PVC 32.png' },
+                    { id: 'valvula-esferica-simple', name: 'VALVULA ESFERICA SIMPLE SCH-80', image: 'img/PVC 33.png' },
+                    { id: 'valvula-flotador', name: 'VALVULA FLOTADOR DE PVC LD', image: 'img/PVC 34.png' },
+                    { id: 'valvula-mariposa', name: 'VALVULA MARIPOSA TIPO PALANCA', image: 'img/PVC 35.png' },
+                    { id: 'yee-a-presion', name: 'YEE SCH-80 A PRESION PVC LESSO', image: 'img/PVC 36.png' },
+                    { id: 'check-flex-horizontal', name: 'CHECK FLEX HORIZONTAL', image: 'img/hierro 01.png' },
+                    { id: 'duo-check-hierro-ductil', name: 'DUO CHECK DE HIERRO DUCTIL', image: 'img/hierro 02.png' },
+                    { id: 'filtro-yee-hierro-ductil', name: 'FILTRO YEE HIERRO DUCTIL', image: 'img/hierro 03.png' },
+                    { id: 'hierro-ductil-adaptador', name: 'HIERRO DUCTIL ADAPTADOR', image: 'img/hierro 04.png' },
+                    { id: 'adaptador-acerrojada', name: 'ADAPTADOR ACERROJADA', image: 'img/hierro 05.png' },
+                    { id: 'medidor-caudal-analogo', name: 'MEDIDOR DE CAUDAL ANALOGO', image: 'img/hierro 06.png' },
+                    { id: 'medidor-doble-chorro', name: 'MEDIDOR DE DOBLE CHORRO', image: 'img/hierro 07.png' },
+                    { id: 'union-acerrojada-hdpe', name: 'UNION ACERROJADA PARA HDPE', image: 'img/hierro 08.png' },
+                    { id: 'union-dresser-amplio-rango', name: 'UNION DRESSER AMPLIO RANGO', image: 'img/hierro 09.png' },
+                    { id: 'valvula-bridada-timon', name: 'VALVULA BRIDADA CON TIMON', image: 'img/hierro 10.png' },
+                    { id: 'valvula-compuerta', name: 'VALVULA COMPUERTA', image: 'img/hierro 11.png' },
+                    { id: 'valvula-aire-triple-efecto', name: 'VALVULA DE AIRE TRIPLE EFECTO', image: 'img/hierro 12.png' },
+                    { id: 'valvula-mariposa-timon', name: 'VALVULA MARIPOSA TIPO TIMON', image: 'img/hierro 13.png' },
+                    { id: 'valvula-mariposa-palanca', name: 'VALVULA MARIPOSA TIPO PALANCA', image: 'img/hierro 14.png' },
+                    { id: 'extrusora-weldy', name: 'EXTRUSORA WELDY', image: 'img/maquina 01.png' },
+                    { id: 'griotech-200mm', name: 'GRIOTECH 200mm', image: 'img/maquina 02.png' },
+                    { id: 'griotech-450mm', name: 'GRIOTECH 450mm', image: 'img/maquina 03.png' },
+                    { id: 'griotech-63-315mm', name: 'GRIOTECH 63mm a 315mm', image: 'img/maquina 04.png' },
+                    { id: 'i-plast-105-soldadora', name: 'I PLAST 105 SOLDADORA', image: 'img/maquina 05.png' },
+                    { id: 'soldador-de-cuña', name: 'SOLDADOR DE CUÑA', image: 'img/maquina 06.png' },
+                    { id: 'sopladora-aire-caliente', name: 'SOPLADORA DE AIRE CALIENTE', image: 'img/maquina 07.png' },
+
+
+
+                ];
+
+                idsArray.forEach(id => {
+                    const producto = productos.find(p => p.id === id);
+                    if (producto) {
+                        $('#resultados-container').append(`
+                            <div class="product-item">
+                                <p class="product-title">${producto.name}</p>
+                                <div class="product-card">
+                                        <img src="${producto.image}" alt="${producto.name}" class="product-image">
+                                </div>
+                            </div>
+                        `);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+

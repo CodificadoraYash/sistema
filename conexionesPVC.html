@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexiones PVC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="submenu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- TOPBAR -->
+    <div class="topbar bg-dark text-light d-flex justify-content-between align-items-center p-3">
+        <div class="welcome-message" id="welcome-message">
+            Bienvenido(a) a Mantaro Perú EIRL | RUC 20610259473
+        </div>
+        <div class="social-icons d-flex flex-wrap">
+            <a href="https://www.facebook.com/share/FUp6RKW2GSbbbaHs/" class="social-icon facebook me-3" rel="noopener noreferrer">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" class="social-icon instagram me-3">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com" class="social-icon youtube me-3">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://tiktok.com" class="social-icon tiktok me-3">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Audio element (hidden) -->
+    <audio id="welcome-audio" src="audio/bienvenida.mp3" type="audio/mp3"></audio>
+    
+    <script>
+        // JavaScript para reproducir el audio cuando se hace clic en el mensaje de bienvenida
+        document.getElementById('welcome-message').addEventListener('click', function() {
+            const audio = document.getElementById('welcome-audio');
+            audio.play();
+        });
+    </script>
+        <!-- NAVEGACION NAV-->
+        <nav>
+            <div class="logo-menu-container">
+                <div class="logo">
+                    <a href="index.html"> <!-- Reemplaza con la URL a la que deseas que redirija -->
+                        <img src="img/LOGO SOLO MANTARO.png" alt="Logo">
+                    </a>
+                    <div class="logo-text">
+                        <span>IMPORTACIÓN</span>
+                        <span>MANTARO</span>
+                        <span>PERÚ E.I.R.L</span>
+                    </div>
+                </div>
+    
+                <div class="menu-icon" id="menu-icon">
+                    <!-- Icono de menú hamburguesa -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="menu-center" id="menu-center">
+                <ul class="menu-row">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="proyectos.html">PROYECTOS</a></li>
+                    <li>
+                        <a href="servicios.html">SERVICIOS</a>
+                        <ul class="submenu">
+                            <li><a href="termofusion.html">TERMOFUSIÓN Y ELECTROFUSIÓN</a></li>
+                            <li><a href="accesorios.html">FABRICACIÓN DE ACCESORIOS EN HDPE, PPR Y PVC</a></li>
+                            <li><a href="asesoria.html">ASESORÍA TÉCNICA EN HDPE, PPR Y PVC</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+                </ul>
+                <ul class="menu-row">
+                    <li>
+                        <a href="productos.html" class="active">PRODUCTOS</a>
+                        <ul class="submenu">
+                            <li><a href="acople.html">ACOPLE RÁPIDO</a></li>
+                            <li><a href="cemento.html">CEMENTO</a></li>
+                            <li><a href="conexionesHDPE.html">CONEXIONES HDPE</a></li>
+                            <li><a href="conexionesPP.html">CONEXIONES PP</a></li>
+                            <li><a href="conexionesPPH.html">CONEXIONES PPH</a></li>
+                            <li><a href="conexionesPPR.html">CONEXIONES PPR</a></li>
+                            <li><a href="conexionesPVC.html"class="active">CONEXIONES PVC</a></li>
+                            <li><a href="hierroDuctil.html">HIERRO DÚCTIL</a></li>
+                            <li><a href="maquinas.html">MÁQUINAS</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                </ul>
+            </div>
+            <div class="actions">
+                <a href="https://wa.me/51904188179" target="_blank">
+                    <button class="cotizar">COTIZAR</button>
+                </a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products" id="search-input">
+                    <button class="search-btn" id="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <script>
+            // JavaScript para alternar el menú hamburguesa
+            const menuIcon = document.getElementById("menu-icon");
+            const menuCenter = document.getElementById("menu-center");
+    
+            menuIcon.addEventListener("click", () => {
+                menuCenter.classList.toggle("active");
+            });
+        </script>
+    
+        <script>
+    
+            window.addEventListener('scroll', function () {
+                const nav = document.querySelector('nav');
+                const menuCenter = document.querySelector('.menu-center');
+    
+                if (window.scrollY > 50) {
+                    nav.classList.add('fixed-nav');
+                    menuCenter.classList.add('single-row');  // Cambia a una sola fila
+                } else {
+                    nav.classList.remove('fixed-nav');
+                    menuCenter.classList.remove('single-row');  // Vuelve a dos filas
+                }
+            });
+        </script>
+        <!-- MENU VERTICAL FLOTANTE -->
+        <div class="social-menu">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/share/FUp6RKW2GSbbbaHs/" class="facebook">
+                        <i class="fab fa-facebook-f"></i><span>Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com" class="instagram">
+                        <i class="fab fa-instagram"></i><span>Instagram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/51904188179" class="social-link whatsapp">
+                        <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com" class="youtube">
+                        <i class="fab fa-youtube"></i><span>YouTube</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://tiktok.com" class="tiktok">
+                        <i class="fab fa-tiktok"></i><span>TikTok</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+    <section class="product-section">
+        <div class="contenido-texto">
+            <h1>PRODUCTOS DE CONEXIONES PVC</h1>
+            <p>Nos dedicamos a la importación y distribución de tubos y conexiones de PVC.</p>
+            <p class="subtitulo">¡ SOLO AQUÍ !</p>
+            <div class="buttons">
+                <a href="https://wa.me/51904188179" class="button">Contactar</a>
+                <a href="catalogo.html" class="button">Ver Catálogos</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-grid">
+        <!-- Tarjeta 1 -->
+        <div class="product-item" id="adaptador-sch-80-pvc-lesso">
+            <p class="product-title">ADAPTADOR SCH-80 PVC LESSO</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-1" src="img/PVC 01.png" alt="Producto 1" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="product-item" id="brida-fija-sch-80-pvc-era">
+            <p class="product-title">BRIDA FIJA SCH-80 PVC ERA</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-2" src="img/PVC 02.png" alt="Producto 2" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="product-item" id="brida-loca-sch-80-pvc-era">
+            <p class="product-title">BRIDA LOCA SCH-80 PVC ERA</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-3" src="img/PVC 03.png" alt="Producto 3" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="product-item" id="buge-pvc-mixto-lesso">
+            <p class="product-title">BUGE PVC MIXTO LESSO</p>
+            <p class="product-description">CONEXIONES PVC, PVC MIXTO</p>
+            <div class="product-card">
+                <img id="product-image-4" src="img/PVC 04.png" alt="Producto 4" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 5 -->
+        <div class="product-item" id="bushing-o-buge-con-rosca-pvc">
+            <p class="product-title">BUSHING O BUGE CON ROSCA PVC</p>
+            <p class="product-description">CONEXIONES PVC, PVC CON ROSCA</p>
+            <div class="product-card">
+                <img id="product-image-5" src="img/PVC 05.png" alt="Producto 5" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 6 -->
+        <div class="product-item" id="check-bola-doble-era">
+            <p class="product-title">CHECK BOLA CON DOBLE ERA</p>
+            <p class="product-description">CONEXIONES PVC</p>
+            <div class="product-card">
+                <img id="product-image-6" src="img/PVC 06.png" alt="Producto 6" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 7 -->
+        <div class="product-item" id="check-bola-una-universal">
+            <p class="product-title">CHECK BOLA UNIVERSAL</p>
+            <p class="product-description">CONEXIONES PVC</p>
+            <div class="product-card">
+                <img id="product-image-7" src="img/PVC 07.png" alt="Producto 7" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 8 -->
+        <div class="product-item" id="check-capleta-pvc">
+            <p class="product-title">CHECK CAPLETA PVC</p>
+            <p class="product-description">CONEXIONES PVC</p>
+            <div class="product-card">
+                <img id="product-image-8" src="img/PVC 08.png" alt="Producto 8" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 9 -->
+        <div class="product-item" id="check-paleta-pvc-era">
+            <p class="product-title">CHECK PALETA PVC ERA</p>
+            <p class="product-description">CONEXIONES PVC</p>
+            <div class="product-card">
+                <img id="product-image-9" src="img/PVC 09.png" alt="Producto 9" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 10 -->
+        <div class="product-item" id="check-resorte-pvc-era">
+            <p class="product-title">CHECK RESORTE PVC ERA</p>
+            <p class="product-description">CONEXIONES PVC</p>
+            <div class="product-card">
+                <img id="product-image-10" src="img/PVC 10.png" alt="Producto 10" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 11 -->
+        <div class="product-item" id="codo-45-sch-80-presion">
+            <p class="product-title">CODO DE 45° SCH-80 A PRESIÓN</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-11" src="img/PVC 11.png" alt="Producto 11" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 12 -->
+        <div class="product-item" id="codo-45-sch-80-rosca">
+            <p class="product-title">CODO DE 45° SCH-80 CON ROSCA</p>
+            <p class="product-description">CONEXIONES PVC, PVC CON ROSCA</p>
+            <div class="product-card">
+                <img id="product-image-12" src="img/PVC 12.png" alt="Producto 12" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 13 -->
+        <div class="product-item" id="codo-90-pvc-mixto-lesso">
+            <p class="product-title">CODO DE 90° PVC MIXTO LESSO</p>
+            <p class="product-description">CONEXIONES PVC, PVC MIXTO</p>
+            <div class="product-card">
+                <img id="product-image-13" src="img/PVC 13.png" alt="Producto 13" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 14 -->
+        <div class="product-item" id="codo-90-sch-80-presion">
+            <p class="product-title">CODO DE 90° SCH-80 A PRESION</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-14" src="img/PVC 14.png" alt="Producto 14" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 15 -->
+        <div class="product-item" id="codo-90-sch-80-rosca">
+            <p class="product-title">CODO DE 90° SCH-80 CON ROSCA</p>
+            <p class="product-description">CONEXIONES PVC, PVC CON ROSCA</p>
+            <div class="product-card">
+                <img id="product-image-15" src="img/PVC 15.png" alt="Producto 15" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 16 -->
+        <div class="product-item" id="cruceta-sch-80-presion-lesso">
+            <p class="product-title">CRUCETA SCH-80 A PRESIÓN LESSO</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-16" src="img/PVC 16.png" alt="Producto 16" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 17 -->
+        <div class="product-item" id="niple-fabrica-dado-pvc">
+            <p class="product-title">NIPLE DE FÁBRICA CON DADO PVC</p>
+            <p class="product-description">CONEXIONES PVC, PVC CON ROSCA</p>
+            <div class="product-card">
+                <img id="product-image-17" src="img/PVC 17.png" alt="Producto 17" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 18 -->
+        <div class="product-item" id="reduccion-buge-sch-80-pvc">
+            <p class="product-title">REDUCCIÓN BUGE SCH-80 PVC</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-18" src="img/PVC 18.png" alt="Producto 18" class="product-image">
+            </div>
+        </div>
+
+
+        <!-- Tarjeta 19 -->
+        <div class="product-item" id="reduccion-campana">
+            <p class="product-title">REDUCCIÓN CAMPANA SCH-80 PVC </p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-19" src="img/PVC 19.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 20 -->
+        <div class="product-item" id="tapon-hembra-a-presion">
+            <p class="product-title">TAPÓN HEMBRA SCH-80 A PRESIÓN </p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-20" src="img/PVC 20.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 21 -->
+        <div class="product-item" id="tapon-hembra-con-rosca">
+            <p class="product-title">TAPÓN HEMBRA SCH-80 CON ROSCA</p>
+            <p class="product-description">CONEXIONES PVC, PVC CON ROSCA</p>
+            <div class="product-card">
+                <img id="product-image-21" src="img/PVC 21.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 22 -->
+        <div class="product-item" id="tapon-macho-con-rosca">
+            <p class="product-title">TAPÓN MACHO SCH-80 CON ROSCA</p>
+            <p class="product-description">CONEXIONES PVC, PVC CON ROSCA</p>
+            <div class="product-card">
+                <img id="product-image-22" src="img/PVC 22.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 23 -->
+        <div class="product-item" id="tee-pvc-mixto">
+            <p class="product-title">TEE PVC MIXTO LESSO</p>
+            <p class="product-description">CONEXIONES PVC, PVC MIXTO</p>
+            <div class="product-card">
+                <img id="product-image-23" src="img/PVC 23.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 24 -->
+        <div class="product-item" id="tee-reduccion-a-presion">
+            <p class="product-title">TEE REDUCCIÓN SCH-80 A PRESIÓN</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-24" src="img/PVC 24.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 25 -->
+        <div class="product-item" id="tee-a-presion">
+            <p class="product-title">TEE SCH-80 A PRESIÓN PVC LESSO</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESION</p>
+            <div class="product-card">
+                <img id="product-image-25" src="img/PVC 25.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 26 -->
+        <div class="product-item" id="tee-con-rosca">
+            <p class="product-title">TEE SCH-80 CON ROSCA PVC LESSO</p>
+            <p class="product-description">CONEXIONES PVC, PVC CON ROSCA</p>
+            <div class="product-card">
+                <img id="product-image-26" src="img/PVC 26.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 27 -->
+        <div class="product-item" id="tricodo-a-presion">
+            <p class="product-title">TRICODO SCH-80 A PRESIÓN PVC</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-27" src="img/PVC 27.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 28 -->
+        <div class="product-item" id="union-coupling-mixto">
+            <p class="product-title">UNIÓN COUPLING PVC MIXTO LESSO</p>
+            <p class="product-description">CONEXIONES PVC, PVC MIXTO</p>
+            <div class="product-card">
+                <img id="product-image-28" src="img/PVC 28.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 29 -->
+        <div class="product-item" id="union-a-presion">
+            <p class="product-title">UNIÓN SCH-80 A PRESIÓN PVC LESSO</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-29" src="img/PVC 29.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 30 -->
+        <div class="product-item" id="union-con-rosca">
+            <p class="product-title">UNIÓN SCH-80 CON ROSCA PVC</p>
+            <p class="product-description">CONEXIONES PVC, PVC CON ROSCA</p>
+            <div class="product-card">
+                <img id="product-image-30" src="img/PVC 30.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 31 -->
+        <div class="product-item" id="union-universal">
+            <p class="product-title">UNIÓN UNIVERSAL SCH-80 PVC</p>
+            <p class="product-description">CONEXIONES PVC</p>
+            <div class="product-card">
+                <img id="product-image-31" src="img/PVC 31.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 32 -->
+        <div class="product-item" id="valvula-doble-union">
+            <p class="product-title">VÁLVULA CON DOBLE UNIÓN SCH-80</p>
+            <p class="product-description">CONEXIONES PVC</p>
+            <div class="product-card">
+                <img id="product-image-32" src="img/PVC 32.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 33 -->
+        <div class="product-item" id="valvula-esferica-simple">
+            <p class="product-title">VÁLVULA ESFÉRICA SIMPLE SCH-80</p>
+            <p class="product-description">CONEXIONES PVC</p>
+            <div class="product-card">
+                <img id="product-image-33" src="img/PVC 33.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 34 -->
+        <div class="product-item" id="valvula-flotador">
+            <p class="product-title">VÁLVULA FLOTADOR DE PVC LD</p>
+            <p class="product-description">CONEXIONES PVC</p>
+            <div class="product-card">
+                <img id="product-image-34" src="img/PVC 34.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 35 -->
+        <div class="product-item" id="valvula-mariposa">
+            <p class="product-title">VÁLVULA MARIPOSA TIPO PALANCA</p>
+            <p class="product-description">CONEXIONES PVC</p>
+            <div class="product-card">
+                <img id="product-image-35" src="img/PVC 35.png" class="product-image">
+            </div>
+        </div>
+
+        <!-- Tarjeta 36 -->
+        <div class="product-item" id="yee-a-presion">
+            <p class="product-title">YEE SCH-80 A PRESIÓN PVC LESSO</p>
+            <p class="product-description">CONEXIONES PVC, PVC A PRESIÓN</p>
+            <div class="product-card">
+                <img id="product-image-36" src="img/PVC 36.png" class="product-image">
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- seccion de gracias-->
+    <section class="seccion-gracias">
+        <div class="texto-gracias">¡ GRACIAS POR TU PREFERENCIA !</div>
+    </section>
+   <!-- ALIADOS ESTRATEGICOS  -->
+   <section class="new-image-slider-section">
+    <h2>¡TRABAJAMOS CON ALIADOS ESTRATÉGICOS!</h2>
+    <div class="blue-line"></div>
+    <div class="new-slider-container">
+        <div class="new-image-slider">
+            <div class="new-image-item">
+                <img src="img/aliado 01.png" alt="Imagen 1">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 02.png" alt="Imagen 2">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 03.png" alt="Imagen 3">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 04.png" alt="Imagen 4">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 05.png" alt="Imagen 5">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 06.png" alt="Imagen 6">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 07.png" alt="Imagen 7">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 08.png" alt="Imagen 8">
+            </div>
+            <!-- Duplicación para loop continuo -->
+            <div class="new-image-item">
+                <img src="img/aliado 01.png" alt="Imagen 1">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 02.png" alt="Imagen 2">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 03.png" alt="Imagen 3">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 04.png" alt="Imagen 4">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 05.png" alt="Imagen 5">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 06.png" alt="Imagen 6">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 07.png" alt="Imagen 7">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 08.png" alt="Imagen 8">
+            </div>
+        </div>
+    </div>
+</section>
+<!--FOOTER -->
+<footer class="bg-black text-light py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Primera sección: Logo e íconos de redes sociales (20%) -->
+            <div class="col-2 d-flex flex-column align-items-center justify-content-center">
+                <img src="img/LOGO SOLO MANTARO  BLANCO.png" alt="Logo" width="230" height="auto">
+                <div class="social-icons mt-3 d-flex justify-content-center">
+                    <a href="https://www.facebook.com/share/FUp6RKW2GSbbbaHs/" class="text-facebook me-2">
+                        <i class="fab fa-facebook fa-1x"></i>
+                    </a>
+                    <a href="https://instagram.com" class="text-instagram me-2">
+                        <i class="fab fa-instagram fa-1x"></i>
+                    </a>
+                    <a href="https://youtube.com" class="text-youtube me-2">
+                        <i class="fab fa-youtube fa-1x"></i>
+                    </a>
+                    <a href="https://tiktok.com" class="text-tiktok">
+                        <i class="fab fa-tiktok fa-1x"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Segunda sección: Contacto y Links Directos (50%) -->
+            <div class="col-5 d-flex justify-content-around align-items-center">
+                <div class="contact-info text-start">
+                    <p><i class="fas fa-envelope" style="color: #3B98EF;"></i> ventas@perumantaro.com</p>
+                    <br>
+                    <p><i class="fas fa-phone-alt" style="color: #3B98EF;"></i> +51 904 188 179</p>
+                    <p><i class="fas fa-phone-alt" style="color: #3B98EF;"></i> +51 986 894 928</p>
+                    <br>
+                    <p><i class="fas fa-map-marker-alt" style="color: #3B98EF;"></i> Carmelita Mz B Lt 37 Ñana - Lima - Perú</p>
+                </div>
+            </div>
+
+
+            <!-- Tercera sección: Video (30%) -->
+            <div class="col-3 d-flex justify-content-center align-items-center">
+                <video width="400" height="250" src="video/video footer.mp4" autoplay preload="auto" muted
+                    loop></video>
+            </div>
+            <!-- Línea divisoria -->
+            <hr class="division-line my-4">
+            <!-- Sección de Copyright centrada y bajada -->
+            <div class="copyright-section text-center mt-4">
+                <p>&copy;2024 Mantaro Perú / Todos los derechos reservados</p>
+            </div>
+            <a href="MANTARO PERU E.I.R.L" class="float-button" id="chatbot-button">
+                <img src="img/iconobot.png" alt="Chatbot Icon" id="chatbot-icon">
+            </a>
+            <div class="chat-window" id="chat-window">
+                <div class="chat-header">
+                    <h4>MANTARO PERÚ E.I.R.L</h4>
+                </div>
+                <div class="chat-body">
+                    <div class="chat-message">
+                        <p>Gracias por comunicarte con <b>MANTARO PERÚ E.I.R.L</b></p>
+                        <p>Por favor, haznos saber cómo podemos ayudarte.</p>
+                    </div>
+                </div>
+                <div class="chat-footer">
+                    <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+                    <button id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            <a href="#" class="scroll-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scrip.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+/* Estilos para la sección de video */
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden;
+}
+
+/* Video de fondo */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que el video ocupe todo el espacio sin distorsionarse */
+}
+  
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .video-section {
+        height: 60vh; /* Reduce la altura para pantallas pequeñas */
+    }
+}
+
+
+
+
+
+
+/* Estilos existentes de la galería */
+.galeria {
+    background-color: #3B98EF; /* Fondo celeste */
+    padding: 20px;
+    text-align: center;
+}
+
+.galeria h1 {
+    font-family: Arial, sans-serif;
+    font-size: 40px; /* Tamaño grande para un efecto más impactante */
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-shadow: 
+        2px 2px 0 #000000,  
+        4px 4px 0 #666666,   
+        6px 6px 0 #333333; 
+}
+
+.galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.imagen {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.imagen:hover {
+    transform: scale(1.09);
+    border: 5px solid white;
+}
+
+.imagen:hover img {
+    transform: scale(1.1);
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.contenido-modal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#imagenModal {
+    width: auto;
+    max-width: 60vw; /* Anchura máxima en vista grande */
+    max-height: 70vh; /* Limita altura en pantallas grandes */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    object-fit: contain; /* Evita que se deforme */
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cerrar:hover {
+    color: #3B98EF;
+}
+
+.anterior, .siguiente {
+    color: #3B98EF;
+    font-size: 36px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 12px;
+    transition: background-color 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.anterior:hover, .siguiente:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+/* Colocación de los botones fuera de la imagen */
+.anterior {
+    left: -60px; /* Fuera del borde de la imagen */
+}
+
+.siguiente {
+    right: -60px; /* Fuera del borde de la imagen */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .galeria-imagenes {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
+    }
+
+    #imagenModal {
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+
+    .anterior, .siguiente {
+        font-size: 28px;
+        left: -40px; /* Ajuste en tabletas */
+        right: -40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-imagenes {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    #imagenModal {
+        max-width: 95vw;
+        max-height: 90vh;
+    }
+
+    .anterior, .siguiente {
+        font-size: 24px;
+        padding: 10px;
+        left: -30px; /* Ajuste en pantallas pequeñas */
+        right: -30px;
+    }
+
+    .cerrar {
+        font-size: 30px;
+    }
+
+    .galeria h1 {
+        font-size: 24px; /* Texto más pequeño en pantallas pequeñas */
+    }
+}
+

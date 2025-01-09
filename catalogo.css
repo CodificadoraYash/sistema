@@ -1,0 +1,241 @@
+.split-section {
+    display: flex;
+    width: 100%;
+    height: 70vh; /* Ajustar la altura de la sección a 70vh */
+}
+
+.left-section {
+    width: 40%;
+    background-image: url('img/fondo\ casco.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.left-section::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen de fondo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Mantener el fondo detrás de la imagen en primer plano */
+}
+
+.foreground-image {
+    position: relative;
+    z-index: 1;
+    animation: moveUpDown 1.5s ease-in-out infinite alternate;
+}
+
+.foreground-image img {
+    width: 110%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.right-section {
+    width: 60%;
+    background-color: #3B98EF;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.catalog-subtitle {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.catalog-title {
+    font-family: Arial, sans-serif;
+    font-size: 45px;
+    color: white;
+    font-weight: 900;
+    text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.1),
+    2px 2px 2px rgba(0, 0, 0, 0.15),
+    3px 3px 3px rgba(0, 0, 0, 0.2),
+    4px 4px 4px rgba(0, 0, 0, 0.25),
+    5px 5px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.catalog-description {
+    color: black;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 12px 30px;
+    box-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.1),
+    2px 2px 2px rgba(0, 0, 0, 0.15),
+    3px 3px 3px rgba(0, 0, 0, 0.2),
+    4px 4px 4px rgba(0, 0, 0, 0.25),
+    5px 5px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    color:black;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    text-decoration: none;
+    background-color: white;
+}
+
+.contact-button:hover {
+    background-color: black;
+    font-weight: 900;
+    color: white;
+    font-weight: 900;
+}
+
+/* Animación de movimiento vertical */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(15px);
+    }
+}
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .split-section {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .left-section,
+    .right-section {
+        width: 100%;
+        height: auto;
+    }
+
+    .right-section {
+        padding: 15px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .catalog-title {
+        font-size: 30px;
+    }
+
+    .catalog-description {
+        font-size: 16px;
+    }
+
+    .contact-button {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+/* Nueva Sección de Catálogos */
+.catalog-section-new {
+    display: flex;
+    justify-content: center;
+    padding: 30px 50px;
+    background-color: #3B98EF;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Contenedor de los catálogos */
+.catalog-container-new {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Tarjetas de catálogo con efecto 3D */
+.catalog-card-new {
+    width: 280px;
+    height: 370px; /* Reducción de altura */
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 4px solid black;
+    box-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.1),
+    2px 2px 2px rgba(0, 0, 0, 0.15),
+    3px 3px 3px rgba(0, 0, 0, 0.2),
+    4px 4px 4px rgba(0, 0, 0, 0.25),
+    5px 5px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover en la tarjeta */
+.catalog-card-new:hover {
+    animation: shake 0.3s ease-in-out;
+    transform: translateY(-8px);
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.1),
+        0 20px 30px rgba(0, 0, 0, 0.3),
+        inset 0 0 15px rgba(0, 0, 0, 0.05),
+        0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Definición de la animación de sacudida */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* Imagen ajustada al tamaño de la tarjeta */
+.catalog-card-new img {
+    width: 100%;
+    height: 100%; /* Ocupa todo el espacio */
+    object-fit: cover; /* Cubre toda la tarjeta sin deformarse */
+    display: block;
+}
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .catalog-container-new {
+        flex-direction: column; /* Cambia el diseño a una columna */
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .catalog-card-new {
+        width: 90%; /* Ocupa la mayor parte del ancho de la pantalla */
+        height: auto; /* Ajusta la altura de la tarjeta */
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-card-new {
+        width: 100%; /* Ocupa todo el ancho en pantallas muy pequeñas */
+    }
+}

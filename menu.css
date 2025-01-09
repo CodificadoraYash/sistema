@@ -1,0 +1,1028 @@
+/* TOPBAR */
+.topbar {
+  background-color: black; /* Fondo negro */
+  padding: 20px; /* Aumentar la altura */
+  font-family: Arial, sans-serif; /* Cambiar a fuente Arial */
+  color: white;
+}
+
+.welcome-message {
+  font-size: 18px;
+  font-weight: 600;
+  color: white; /* Texto en blanco */
+  margin-left: 20px; /* Espacio para que no comience desde el borde */
+}
+
+/* Iconos sociales */
+.social-icons {
+  margin-right: 20px; /* Espacio al final de las redes sociales */
+}
+
+/* Efecto hover suave y color celeste en redes sociales */
+.social-icon i {
+  color: white;
+  font-size: 25px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover i {
+  color: #3B98EF; /* Color celeste */
+  transform: scale(1.2); /* Efecto de aumento suave */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .topbar {
+      flex-direction: column; /* Coloca el contenido en columna */
+      text-align: center; /* Centra el texto y los iconos */
+  }
+
+  .welcome-message {
+      font-size: 16px;
+      margin: 0 0 10px 0; /* Elimina margen izquierdo, agrega margen inferior */
+  }
+
+  .social-icons {
+      margin: 0; /* Quita márgenes en pantallas pequeñas */
+  }
+
+  .social-icons a {
+      font-size: 20px;
+      margin-bottom: 10px;
+  }
+}
+/* Efecto hover para el mensaje de bienvenida */
+.welcome-message:hover {
+  color: #3B98EF; /* Color celeste */
+}
+
+
+
+
+
+
+/* MENU*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 140px; /* Aumenta el tamaño del logo */
+    margin-right: -5px; /* Reduce el espacio entre el logo y el texto */
+    object-fit: contain;
+  }
+  
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    font-weight: bold; /* Hacer el texto negrita */
+    line-height: 1.3; /* Reduce el espacio entre las filas de texto */
+    margin-top: 23px; /* Baja el texto más abajo */
+  }
+  
+  .logo-text span {
+    font-size: 17px; /* Tamaño de las letras más pequeñas */
+    font-weight: 900; /* Letras más gruesas */
+    color: black; /* Cambia el color del texto a negro */
+  }
+  
+  .menu-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea el contenido al centro */
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+  
+  .menu-row {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centra los elementos dentro de la fila */
+    gap: 35px; /* Espacio entre los elementos del menú */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-center .menu-row:first-child {
+    margin-bottom: 20px; /* Espacio entre la primera y segunda fila */
+  }
+  
+  .menu-row li {
+    position: relative; /* Permitir submenús */
+  }
+  
+  .menu-row li a {
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    font-weight: 800; /* Hacer el texto negrita */
+    color: black; /* Cambia el color de las letras a negro */
+    padding-bottom: 5px;
+    position: relative;
+    transition: color 0.3s ease; /* Añade una transición suave al cambiar el color */
+  }
+  
+  .menu-row li a.active {
+    color: #3B98EF; /* Cambia a color celeste cuando está activo */
+  }
+  
+  .menu-row li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #3B98EF; /* Subrayado en color celeste */
+  }
+  
+  .menu-row li a:hover {
+    color: #3B98EF; /* Cambia el color a celeste al pasar el ratón */
+  }
+  
+  /* Submenú de productos */
+  .menu-row li:hover .submenu {
+    display: block; /* Mostrar el submenú al pasar el ratón */
+  }
+  
+  .submenu {
+    display: none; /* Ocultar el submenú por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 180px; /* Ancho del submenú */
+  }
+  
+  .submenu li {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .submenu li a {
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    color: black;
+    font-weight: bold; /* Hacer el texto del submenú en negrita */
+    text-decoration: none;
+    text-align: center; /* Centrar el texto en el cuadro */
+  }
+  
+  .submenu li a:hover {
+    background-color: #3B98EF; /* Cambia el color de fondo al pasar el ratón */
+    color: white;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto; /* Asegura que las acciones estén alineadas al final del contenedor */
+  }
+  
+/* Botón Cotizar */
+.cotizar {
+  background-color: black !important; /* Color de fondo negro */
+  color: white !important; /* Color de letra blanco */
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  font-weight: 900 !important;
+}
+
+.cotizar:hover {
+  transform: scale(1.1); /* Agranda el botón ligeramente */
+  background-color: #3B98EF !important; /* Cambia el fondo a celeste */
+  color: white !important; /* Mantiene las letras blancas */
+}
+
+.cotizar:active {
+  background-color: #3B98EF !important; /* Fondo celeste cuando se presiona */
+  color: white !important; /* Letras blancas cuando se presiona */
+}
+
+
+.search-bar {
+  margin-left: auto;
+  margin-right: 10px; /* Igualar el margen a la izquierda del logo */
+  display: flex;
+  align-items: center;
+  border: 3px solid #3B98EF;
+  border-radius: 30px;
+  padding: 5px 10px;
+  height: 40px;
+  width: 250px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+  flex: 1; /* Permite que el campo de texto ocupe todo el espacio disponible */
+  color: black
+}
+
+.search-btn {
+  background-color: #3B98EF; /* Fondo celeste */
+  border-radius: 50%; /* Hace que el botón sea un círculo */
+  padding: 5px; /* Ajuste del padding para centrar mejor la lupa */
+  border: none;
+  color: black; /* Color de la lupa */
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-btn i {
+  font-size: 20px; /* Ajuste del tamaño del ícono para que quede bien centrado */
+}
+  
+ /* Icono de menú hamburguesa (solo visible en pantallas pequeñas) */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.menu-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+}
+/* Hover en el logo */
+.logo img:hover {
+  filter: brightness(0); /* Cambia el logo a negro */
+  transition: filter 0.3s ease; /* Efecto de transición suave */
+}
+
+/* Hover en el texto al costado del logo */
+.logo-text span:hover {
+  color: #3B98EF; /* Cambia el color del texto a celeste */
+  transition: color 0.3s ease; /* Efecto de transición suave */
+}
+
+/* Submenús */
+.menu-row li:hover .submenu {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 180px;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px;
+  font-size: 14px;
+  color: black;
+  font-weight: 800; /* Hacer el texto del submenú en negrita */
+  text-decoration: none;
+  text-align: center;
+}
+
+.submenu li a:hover {
+  background-color: #3B98EF; /* Cambia el color de fondo al pasar el ratón */
+  color: white;
+}
+
+/* Acciones */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cotizar {
+  background-color: #3B98EF;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  /* Alinear logo y menú hamburguesa en línea */
+  .logo-menu-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+  }
+
+  /* Ocultar menú normal y mostrar menú hamburguesa */
+  .menu-center {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+  }
+
+  .menu-center.active {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 10px 0;
+  }
+
+  .menu-icon {
+      display: flex;
+  }
+
+  /* Ocultar el botón de "COTIZAR" y la barra de búsqueda en pantallas pequeñas */
+  .actions, .search-bar {
+      display: none;
+  }
+}
+  
+
+/* Mantener el nav fijo al hacer scroll en pantallas grandes */
+@media (min-width: 769px) {
+  .fixed-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+  }
+  
+  .fixed-nav .menu-center {
+      display: flex;
+      flex-direction: row; /* Asegurarse de que los elementos estén en una fila */
+      justify-content: center; /* Centrar los elementos del menú */
+  }
+  
+  .fixed-nav .menu-row {
+      flex-direction: row; /* Coloca los elementos del menú en una sola fila */
+      gap: 20px; /* Espacio entre los elementos */
+  }
+  
+  .fixed-nav .menu-row li {
+      display: inline-block; /* Asegura que cada elemento del menú esté en una fila horizontal */
+  }
+  
+  .fixed-nav .menu-row li a {
+      font-size: 14px; /* Reducir el tamaño de las letras para que quepan mejor */
+  }
+  
+  .fixed-nav .logo img {
+      width: 100px; /* Reducir el tamaño del logo */
+  }
+  
+  .fixed-nav .logo-text span {
+      font-size: 14px; /* Reducir el tamaño del texto */
+  }
+  
+  .single-row .menu-row {
+      flex-direction: row;   /* Coloca los elementos en una fila */
+      flex-wrap: nowrap;     /* Evita que se dividan en múltiples filas */
+      gap: 20px;             /* Espacio general entre los elementos */
+  }
+  
+  .single-row .menu-center {
+      flex-direction: row;   /* Asegura que los elementos estén alineados horizontalmente */
+      justify-content: center;
+  }
+  
+  .single-row .menu-row:first-child {
+      margin-bottom: 0; /* Elimina el margen entre las filas, ya que solo habrá una fila */
+  }
+  
+  .single-row .menu-row li:nth-child(4) {
+      margin-right: 20px; /* Agrega más espacio entre "PROYECTOS" y "PRODUCTOS" */
+  }
+  
+  .fixed-nav .menu-row {
+      flex-direction: row; /* Mantén los elementos en una fila */
+      gap: 20px;           /* Espacio general entre los elementos */
+  }
+  
+  /* Ajuste de las letras al lado del logo cuando se hace scroll */
+  .fixed-nav .logo-text {
+      margin-top: 15px; /* Sube un poco las letras del logo durante el scroll */
+  }
+  
+  /* Hacer que el submenú esté en una fila horizontal */
+  .single-row .submenu li {
+      border-bottom: none;    /* Elimina las líneas de separación entre los elementos del submenú */
+      margin-right: 15px;     /* Espacio entre los elementos del submenú */
+      width: 100%;                  /* Ocupa todo el ancho disponible */
+  }
+  
+  .fixed-nav .menu-row li a {
+      font-size: 13px; /* Ajuste el tamaño de las letras más grandes para el menú en scroll */
+      font-weight: 800; /* Hacer el texto negrita */
+  }
+  
+  .fixed-nav .logo-text span {
+      font-size: 12px; /* Reducir el tamaño del texto */
+  }
+}
+
+
+
+
+
+
+
+
+/* Social Menu Styles */
+.social-menu {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.social-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-menu ul li {
+  margin: 0;
+}
+
+.social-menu ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  border-radius: 0;
+  text-decoration: none;
+  transition: width 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+.social-menu ul li a:hover {
+  width: 140px;
+  box-shadow: 5px 5px 10px #3B98EF; /* Aumenta la sombra en hover */
+}
+
+.social-menu ul li a i {
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+.social-menu ul li a span {
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-left: 10px;
+}
+
+.social-menu ul li a:hover span {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Specific colors for each social network */
+.social-menu ul li a.facebook {
+  background-color: #003ab8;
+}
+
+.social-menu ul li a.whatsapp {
+  background-color: #00a53d;
+}
+
+.social-menu ul li a.instagram {
+  background-color: #ff006f;
+}
+
+.social-menu ul li a.youtube {
+  background-color: #ff0000;
+}
+
+.social-menu ul li a.tiktok {
+  background-color: #010101;
+}
+
+/* Shining light animation */
+.social-menu ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  transform: scale(1.5);
+}
+
+.social-menu ul li a:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Custom light animations for each social network */
+.social-menu ul li a.facebook:hover::before {
+  background: rgba(59, 89, 152, 0.2);
+}
+
+.social-menu ul li a.whatsapp:hover::before {
+  background: rgba(37, 211, 102, 0.2);
+}
+
+.social-menu ul li a.instagram:hover::before {
+  background: rgba(228, 64, 95, 0.2);
+}
+
+.social-menu ul li a.youtube:hover::before {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+.social-menu ul li a.tiktok:hover::before {
+  background: rgba(1, 1, 1, 0.2);
+}
+
+/* Floating menu adjustments for scrolling */
+@media (min-width: 600px) {
+  .social-menu {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ALIADOS ESTRATEGICOS */
+.new-image-slider-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 35vh;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+/* Estilo para el texto superior */
+.new-image-slider-section h2 {
+  font-size: 2.3em;
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* Línea recta celeste */
+.blue-line {
+  width: 85%; /* Ajusta el ancho según prefieras */
+  height: 10px;
+  background-color: #3B98EF; /* Color celeste */
+  margin-bottom: 20px; /* Espacio entre la línea y el slider */
+}
+
+/* Estilos del slider */
+.new-slider-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.new-image-slider {
+  display: flex;
+  width: calc(100% * 10 / 5);
+  height: 100%;
+  animation: slide 12s infinite linear;
+}
+
+.new-image-item {
+  width: calc(100% / 10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  margin: 0;
+}
+
+.new-image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.new-image-item img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Animación del slider */
+@keyframes slide {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+
+/* Media queries para hacer la sección responsive */
+
+/* Para pantallas de tablet */
+@media (max-width: 768px) {
+  .new-image-slider-section {
+    height: 40vh;
+  }
+  
+  .new-image-slider-section h2 {
+    font-size: 1em;
+    align-items: center;
+  }
+
+  .new-image-item {
+    width: calc(100% / 5);
+    padding: 0 10px;
+  }
+}
+
+/* Para pantallas de móvil */
+@media (max-width: 480px) {
+  .new-image-slider-section {
+    height: 45vh;
+  }
+  
+  .new-image-slider-section h2 {
+    font-size: 1.2em;
+  }
+
+  .new-image-item {
+    width: calc(100% / 3);
+    padding: 0 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para los iconos de redes sociales */
+footer .social-icons a {
+  font-size: 30px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+  color: #3B98EF; /* Color celeste inicial */
+}
+
+footer .social-icons a:hover {
+  color: white; /* Cambia a blanco cuando se hace hover */
+}
+
+/* Línea divisoria más larga */
+.division-line {
+  border: none;
+  height: 2px;
+  background: #3B98EF;
+  margin-bottom: 0;
+  width: 100%; /* Aumentar el ancho de la línea divisoria */
+  margin: 0 auto; /* Centrar la línea */
+}
+
+/* Estilo para las secciones de contacto y enlaces directos */
+.contact-info, .links-directos {
+  color: white;
+}
+
+.contact-info p, .links-directos p {
+  font-size: 18px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.contact-info p i {
+  margin-right: 10px;
+  color: white; /* Color blanco solo para los íconos de contacto */
+}
+
+/* Estilo para los enlaces directos */
+.links-directos a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: #3B98EF; /* Aplica color celeste a los enlaces */
+  font-weight: bold;
+}
+
+.links-directos a:hover {
+  color: white; /* Cambia a blanco cuando se hace hover */
+}
+
+.links-directos p i {
+  color: #3B98EF; /* Los íconos de los enlaces directos se mantienen celestes */
+}
+
+/* Ajustar las proporciones */
+.col-2 {
+  width: 20%;
+}
+
+.col-5 {
+  width: 45%;
+}
+
+.col-3 {
+  width: 35%;
+}
+
+/* Centrar elementos verticalmente */
+.d-flex.align-items-center {
+  align-items: center;
+}
+
+.d-flex.justify-content-center {
+  justify-content: center;
+}
+
+/* Alinear texto a la izquierda */
+.text-start {
+  text-align: left;
+}
+
+/* Aumentar el tamaño del logo sin perder resolución */
+footer img {
+  width: 250px;
+  height: auto;
+}
+
+footer img:hover {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(96%) hue-rotate(175deg) saturate(350%) brightness(1.1); /* Cambia a celeste cercano a #3B98EF */
+}
+
+/* Aumentar margen superior para el copyright */
+.copyright-section {
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Color celeste para el copyright */
+.copyright-section p {
+  color: rgb(184, 184, 184); /* Aplica color celeste al texto de copyright */
+}
+
+/* Estilo del ícono flotante */
+.float-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  text-decoration: none;
+  box-shadow: none;
+  font-family: Arial, sans-serif; /* Fuente Arial para todo el texto */
+}
+
+.float-button img {
+  width: 100px;
+  height: 100px;
+  transition: filter 0.3s ease;
+}
+
+
+
+/* Efecto hover para cuando pases el mouse sobre el ícono */
+.float-button:hover img {
+  transform: scale(1.1);
+}
+
+/* Estilo de la ventana de chat */
+.chat-window {
+  display: none;
+  position: fixed;
+  bottom: 20px; /* Mantiene la misma posición inferior que el ícono */
+  left: 140px; /* Ajuste para que el cuadro aparezca pegado al lado derecho del ícono */
+  width: 300px;
+  background-color: white;
+  border: 5px solid #3B98EF;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  font-family: Arial, sans-serif; /* Fuente Arial para todo el texto */
+}
+
+.chat-header {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+}
+
+.chat-header h4 {
+  font-size: 16px; /* Tamaño de fuente más pequeño */
+  font-weight: 800; /* Grosor de la fuente */
+  margin: 0; /* Eliminar margen adicional */
+  font-family: Arial, sans-serif; /* Fuente Arial para todo el texto */
+}
+
+.chat-body {
+  padding: 10px;
+  font-size: 14px;
+  font-family: Arial, sans-serif; /* Fuente Arial para todo el texto */
+}
+
+.chat-footer {
+  display: flex;
+  padding: 10px;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#send-button {
+  background-color: #000000; /* Color verde típico de WhatsApp */
+  color: white; /* Color del ícono en blanco */
+  border: none;
+  padding: 10px; /* Padding ajustado */
+  border-radius: 50%; /* Botón redondeado */
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto flotante */
+  transition: background-color 0.3s ease; /* Transición suave en el hover */
+}
+
+#send-button:hover {
+  background-color: #3B98EF; /* Color verde más oscuro en hover */
+}
+
+/* Estilo para el ícono de envío dentro del botón */
+#send-button::before {
+  font-family: "Font Awesome 5 Free"; /* Usa FontAwesome */
+  font-weight: 900; /* Estilo sólido del ícono */
+  color: white;
+  font-size: 16px; /* Tamaño del ícono */
+}
+
+.chat-message {
+  background-color: #3B98EF; /* Color verde claro como burbuja de mensaje */
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 80%;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif; /* Fuente Arial para todo el texto */
+}
+
+.chat-message p {
+  margin: 0;
+  font-size: 14px;
+  color: #000; /* Color negro para el texto */
+}
+
+.chat-body {
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Estilo del botón flotante */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3B98EF; /* Color celeste */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  z-index: 999;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none; /* Quita cualquier subrayado */
+}
+
+.scroll-to-top:hover {
+  background-color: #3B98EF; /* Color celeste más oscuro en hover */
+  transform: scale(1.1); /* Efecto de agrandamiento en hover */
+}
+
+/* Estilo de la flecha */
+.scroll-to-top i {
+  color: black; /* Color de la flecha */
+  font-size: 26px; /* Tamaño de la flecha más grande */
+  font-weight: bold; /* Flecha más gruesa */
+  text-decoration: none; /* Asegura que no haya subrayado */
+}
+
+
+/* Estilos responsive */
+@media screen and (max-width: 768px) {
+  .col-2, .col-5, .col-3 {
+    width: 100%; /* Cada columna ocupa el 100% */
+    margin-bottom: 20px; /* Espacio entre secciones */
+    text-align: center; /* Centrar contenido */
+  }
+  
+  footer img {
+    width: 200px; /* Reducir tamaño del logo en pantallas medianas */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .social-icons a {
+    font-size: 24px; /* Reducir tamaño de los iconos en pantallas pequeñas */
+    margin: 0 5px;
+  }
+  
+  .contact-info h4, .links-directos h4 {
+    font-size: 18px; /* Reducir tamaño del texto de secciones */
+  }
+
+  .contact-info p, .links-directos p {
+    font-size: 16px; /* Reducir tamaño de texto */
+  }
+
+  footer img {
+    width: 150px; /* Ajustar tamaño del logo en pantallas pequeñas */
+  }
+}

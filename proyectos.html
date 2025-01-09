@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyectos</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="menu.css">
+        <link rel="stylesheet" href="proyectos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+        
+    </head>
+
+<body>
+<!-- TOPBAR -->
+<div class="topbar bg-dark text-light d-flex justify-content-between align-items-center p-3">
+    <div class="welcome-message" id="welcome-message">
+        Bienvenido(a) a Mantaro Perú EIRL | RUC 20610259473
+    </div>
+    <div class="social-icons d-flex flex-wrap">
+        <a href="https://www.facebook.com/share/FUp6RKW2GSbbbaHs/" class="social-icon facebook me-3" rel="noopener noreferrer">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" class="social-icon instagram me-3">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://youtube.com" class="social-icon youtube me-3">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://tiktok.com" class="social-icon tiktok me-3">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+</div>
+
+<!-- Audio element (hidden) -->
+<audio id="welcome-audio" src="audio/bienvenida.mp3" type="audio/mp3"></audio>
+
+<script>
+    // JavaScript para reproducir el audio cuando se hace clic en el mensaje de bienvenida
+    document.getElementById('welcome-message').addEventListener('click', function() {
+        const audio = document.getElementById('welcome-audio');
+        audio.play();
+    });
+</script>
+    <!-- NAV MENU -->
+    <nav>
+        <div class="logo-menu-container">
+            <div class="logo">
+                <a href="index.html"> <!-- Reemplaza con la URL a la que deseas que redirija -->
+                    <img src="img/LOGO SOLO MANTARO.png" alt="Logo">
+                </a>
+                <div class="logo-text">
+                    <span>IMPORTACIÓN</span>
+                    <span>MANTARO</span>
+                    <span>PERÚ E.I.R.L</span>
+                </div>
+            </div>
+
+            <div class="menu-icon" id="menu-icon">
+                <!-- Icono de menú hamburguesa -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="menu-center" id="menu-center">
+            <ul class="menu-row">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="proyectos.html" class="active">PROYECTOS</a></li>
+                <li>
+                    <a href="servicios.html">SERVICIOS</a>
+                    <ul class="submenu">
+                        <li><a href="termofusion.html">TERMOFUSIÓN Y ELECTROFUSIÓN</a></li>
+                        <li><a href="servicio2.html">FABRICACIÓN DE ACCESORIOS EN HDPE, PPR Y PVC</a></li>
+                        <li><a href="servicio3.html">ASESORÍA TÉCNICA EN HDPE, PPR Y PVC</a></li>
+                    </ul>
+                </li>
+                <li><a href="nosotros.html">NOSOTROS</a></li>
+            </ul>
+            <ul class="menu-row">
+                <li>
+                    <a href="productos.html">PRODUCTOS</a>
+                    <ul class="submenu">
+                        <li><a href="acople.html">ACOPLE RÁPIDO</a></li>
+                        <li><a href="cemento.html">CEMENTO</a></li>
+                        <li><a href="conexionesHDPE.html">CONEXIONES HDPE</a></li>
+                        <li><a href="conexionesPP.html">CONEXIONES PP</a></li>
+                        <li><a href="conexionesPPH.html">CONEXIONES PPH</a></li>
+                        <li><a href="conexionesPPR.html">CONEXIONES PPR</a></li>
+                        <li><a href="conexionesPVC.html">CONEXIONES PVC</a></li>
+                        <li><a href="hierroDuctil.html">HIERRO DÚCTIL</a></li>
+                        <li><a href="maquinas.html">MÁQUINAS</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </div>
+        <div class="actions">
+            <a href="https://wa.me/51904188179" target="_blank">
+                <button class="cotizar">COTIZAR</button>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products" id="search-input">
+                <button class="search-btn" id="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <script>
+        // JavaScript para alternar el menú hamburguesa
+        const menuIcon = document.getElementById("menu-icon");
+        const menuCenter = document.getElementById("menu-center");
+
+        menuIcon.addEventListener("click", () => {
+            menuCenter.classList.toggle("active");
+        });
+    </script>
+
+    <script>
+        // JavaScript para el scroll del menu
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            const menuCenter = document.querySelector('.menu-center');
+
+            if (window.scrollY > 50) {
+                nav.classList.add('fixed-nav');
+                menuCenter.classList.add('single-row');  // Cambia a una sola fila
+            } else {
+                nav.classList.remove('fixed-nav');
+                menuCenter.classList.remove('single-row');  // Vuelve a dos filas
+            }
+        });
+    </script>
+    <!-- MENU VERTICAL FLOTANTE -->
+    <div class="social-menu">
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/share/FUp6RKW2GSbbbaHs/" class="facebook">
+                    <i class="fab fa-facebook-f"></i><span>Facebook</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com" class="instagram">
+                    <i class="fab fa-instagram"></i><span>Instagram</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://wa.me/51904188179" class="social-link whatsapp">
+                    <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://youtube.com" class="youtube">
+                    <i class="fab fa-youtube"></i><span>YouTube</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiktok.com" class="tiktok">
+                    <i class="fab fa-tiktok"></i><span>TikTok</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+  
+<section class="video-section">
+    <video autoplay muted loop class="background-video">
+        <source src="video/proyecto.mp4" type="video/mp4">
+        <!-- Puedes incluir más formatos aquí, si tienes -->
+        Tu navegador no soporta videos HTML5.
+    </video>
+</section>
+
+
+
+
+<div class="galeria">
+    <h1>NUESTROS PROYECTOS</h1>
+    <div class="galeria-imagenes">
+        <!-- Repite este div .imagen para cada imagen -->
+        <div class="imagen" onclick="abrirModal(0)">
+            <img src="img/proyecto 01.png" alt="Imagen 1">
+        </div>
+        <div class="imagen" onclick="abrirModal(1)">
+            <img src="img/proyecto 02.png" alt="Imagen 2">
+        </div>
+        <div class="imagen" onclick="abrirModal(2)">
+            <img src="img/proyecto 03.png" alt="Imagen 3">
+        </div>
+        <div class="imagen" onclick="abrirModal(3)">
+            <img src="img/proyecto 04.png" alt="Imagen 4">
+        </div>
+        <div class="imagen" onclick="abrirModal(4)">
+            <img src="img/proyecto 05.png" alt="Imagen 5">
+        </div>
+        <div class="imagen" onclick="abrirModal(5)">
+            <img src="img/proyecto 06.png" alt="Imagen 6">
+        </div>
+        <div class="imagen" onclick="abrirModal(6)">
+            <img src="img/proyecto 07.png" alt="Imagen 7">
+        </div>
+        <div class="imagen" onclick="abrirModal(7)">
+            <img src="img/proyecto 08.png" alt="Imagen 8">
+        </div>
+        <div class="imagen" onclick="abrirModal(8)">
+            <img src="img/proyecto 09.png" alt="Imagen 9">
+        </div>
+        <div class="imagen" onclick="abrirModal(9)">
+            <img src="img/proyecto 10.png" alt="Imagen 10">
+        </div>
+        <div class="imagen" onclick="abrirModal(10)">
+            <img src="img/proyecto 11.png" alt="Imagen 11">
+        </div>
+        <div class="imagen" onclick="abrirModal(11)">
+            <img src="img/proyecto 12.png" alt="Imagen 12">
+        </div>
+        <div class="imagen" onclick="abrirModal(12)">
+            <img src="img/proyecto 13.png" alt="Imagen 13">
+        </div>
+        <div class="imagen" onclick="abrirModal(13)">
+            <img src="img/proyecto 14.png" alt="Imagen 14">
+        </div>
+        <div class="imagen" onclick="abrirModal(14)">
+            <img src="img/proyecto 15.png" alt="Imagen 15">
+        </div>
+        <div class="imagen" onclick="abrirModal(15)">
+            <img src="img/proyecto 16.png" alt="Imagen 16">
+        </div>
+        <div class="imagen" onclick="abrirModal(16)">
+            <img src="img/proyecto 17.png" alt="Imagen 17">
+        </div>
+        <div class="imagen" onclick="abrirModal(17)">
+            <img src="img/proyecto 18.png" alt="Imagen 18">
+        </div>
+        <div class="imagen" onclick="abrirModal(18)">
+            <img src="img/proyecto 19.png" alt="Imagen 19">
+        </div>
+        <div class="imagen" onclick="abrirModal(19)">
+            <img src="img/proyecto 20.png" alt="Imagen 20">
+        </div>
+        <!-- Agrega más imágenes según necesites -->
+    </div>
+</div>
+
+<!-- Modal a pantalla completa para el carrusel -->
+<div id="modalImagen" class="modal">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <div class="contenido-modal">
+        <button class="anterior" onclick="cambiarSlide(-1)">&#10094;</button>
+        <img id="imagenModal" src="" alt="Imagen a pantalla completa">
+        <button class="siguiente" onclick="cambiarSlide(1)">&#10095;</button>
+    </div>
+</div>
+
+<script>
+    let indiceImagenActual = 0;
+    const imagenes = document.querySelectorAll('.galeria-imagenes .imagen img');
+
+    function abrirModal(indice) {
+        indiceImagenActual = indice;
+        document.getElementById('imagenModal').src = imagenes[indice].src;
+        document.getElementById('modalImagen').style.display = "flex";
+    }
+
+    function cerrarModal() {
+        document.getElementById('modalImagen').style.display = "none";
+    }
+
+    function cambiarSlide(direccion) {
+        indiceImagenActual += direccion;
+        if (indiceImagenActual < 0) {
+            indiceImagenActual = imagenes.length - 1;
+        } else if (indiceImagenActual >= imagenes.length) {
+            indiceImagenActual = 0;
+        }
+        document.getElementById('imagenModal').src = imagenes[indiceImagenActual].src;
+    }
+
+    window.onclick = function(evento) {
+        const modal = document.getElementById('modalImagen');
+        if (evento.target == modal) {
+            cerrarModal();
+        }
+    };
+</script>
+
+
+ 
+  
+   <!-- ALIADOS ESTRATEGICOS  -->
+   <section class="new-image-slider-section">
+    <h2>¡TRABAJAMOS CON ALIADOS ESTRATÉGICOS!</h2>
+    <div class="blue-line"></div>
+    <div class="new-slider-container">
+        <div class="new-image-slider">
+            <div class="new-image-item">
+                <img src="img/aliado 01.png" alt="Imagen 1">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 02.png" alt="Imagen 2">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 03.png" alt="Imagen 3">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 04.png" alt="Imagen 4">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 05.png" alt="Imagen 5">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 06.png" alt="Imagen 6">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 07.png" alt="Imagen 7">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 08.png" alt="Imagen 8">
+            </div>
+            <!-- Duplicación para loop continuo -->
+            <div class="new-image-item">
+                <img src="img/aliado 01.png" alt="Imagen 1">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 02.png" alt="Imagen 2">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 03.png" alt="Imagen 3">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 04.png" alt="Imagen 4">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 05.png" alt="Imagen 5">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 06.png" alt="Imagen 6">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 07.png" alt="Imagen 7">
+            </div>
+            <div class="new-image-item">
+                <img src="img/aliado 08.png" alt="Imagen 8">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--FOOTER -->
+    <footer class="bg-black text-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Primera sección: Logo e íconos de redes sociales (20%) -->
+                <div class="col-2 d-flex flex-column align-items-center justify-content-center">
+                    <img src="img/LOGO SOLO MANTARO  BLANCO.png" alt="Logo" width="230" height="auto">
+                    <div class="social-icons mt-3 d-flex justify-content-center">
+                        <a href="https://www.facebook.com/share/FUp6RKW2GSbbbaHs/" class="text-facebook me-2">
+                            <i class="fab fa-facebook fa-1x"></i>
+                        </a>
+                        <a href="https://instagram.com" class="text-instagram me-2">
+                            <i class="fab fa-instagram fa-1x"></i>
+                        </a>
+                        <a href="https://youtube.com" class="text-youtube me-2">
+                            <i class="fab fa-youtube fa-1x"></i>
+                        </a>
+                        <a href="https://tiktok.com" class="text-tiktok">
+                            <i class="fab fa-tiktok fa-1x"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Segunda sección: Contacto y Links Directos (50%) -->
+                <div class="col-5 d-flex justify-content-around align-items-center">
+                    <div class="contact-info text-start">
+                        <p><i class="fas fa-envelope" style="color: #3B98EF;"></i> ventas@perumantaro.com</p>
+                        <br>
+                        <p><i class="fas fa-phone-alt" style="color: #3B98EF;"></i> +51 904 188 179</p>
+                        <p><i class="fas fa-phone-alt" style="color: #3B98EF;"></i> +51 986 894 928</p>
+                        <br>
+                        <p><i class="fas fa-map-marker-alt" style="color: #3B98EF;"></i> Carmelita Mz B Lt 37 Ñana - Lima - Perú</p>
+                    </div>
+                </div>
+
+
+                <!-- Tercera sección: Video (30%) -->
+                <div class="col-3 d-flex justify-content-center align-items-center">
+                    <video width="400" height="250" src="video/video footer.mp4" autoplay preload="auto" muted
+                        loop></video>
+                </div>
+                <!-- Línea divisoria -->
+                <hr class="division-line my-4">
+                <!-- Sección de Copyright centrada y bajada -->
+                <div class="copyright-section text-center mt-4">
+                    <p>&copy;2024 Mantaro Perú / Todos los derechos reservados</p>
+                </div>
+                <a href="MANTARO PERU E.I.R.L" class="float-button" id="chatbot-button">
+                    <img src="img/iconobot.png" alt="Chatbot Icon" id="chatbot-icon">
+                </a>
+                <div class="chat-window" id="chat-window">
+                    <div class="chat-header">
+                        <h4>MANTARO PERÚ E.I.R.L</h4>
+                    </div>
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Gracias por comunicarte con <b>MANTARO PERÚ E.I.R.L</b></p>
+                            <p>Por favor, haznos saber cómo podemos ayudarte.</p>
+                        </div>
+                    </div>
+                    <div class="chat-footer">
+                        <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+                        <button id="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                <a href="#" class="scroll-to-top">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scrip.js"></script>
+
+</body>
+</html>

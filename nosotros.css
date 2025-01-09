@@ -1,0 +1,411 @@
+/* PRIMERA SECCION CON VIDEO */
+.video-section {
+    position: relative;
+    height: 100vh; /* La sección ocupa toda la altura de la ventana */
+    overflow: hidden;
+}
+
+/* Estilo del video de fondo */
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Coloca el video detrás del contenido */
+}
+
+/* Estilo del contenido que va encima del video */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    opacity: 0; /* Comienza invisible */
+    animation: fadeInText 2s 1s forwards; /* Retrasa la aparición del texto */
+}
+
+/* Estilo del texto "MANTARO PERÚ" con efecto 3D */
+.content h1 {
+    font-family: Arial, sans-serif; /* Fuente Arial */
+    font-size: 120px; /* Tamaño grande del texto */
+    font-weight: 900; /* Letra gruesa */
+    color: white; /* Color blanco */
+    letter-spacing: 5px; /* Espaciado entre letras */
+    text-shadow: 
+        2px 2px 0 #000000,  /* Sombra negra detrás de la letra */
+        4px 4px 0 #666666,  /* Segunda sombra gris para mayor profundidad */
+        6px 6px 0 #333333;  /* Tercera sombra para un efecto 3D */
+    animation: move-forward 5s infinite; /* Animación de movimiento de atrás hacia adelante */
+    perspective: 2000px; /* Perspectiva 3D */
+}
+
+/* Animación para retrasar la aparición del texto */
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animación de movimiento hacia delante */
+@keyframes move-forward {
+    0% {
+        transform: translateZ(-300px); /* Comienza lejos */
+    }
+    50% {
+        transform: translateZ(50px); /* Llega cerca del espectador */
+    }
+    100% {
+        transform: translateZ(-300px); /* Vuelve a alejarse */
+    }
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 600px) {
+    .content h1 {
+        font-size: 60px; /* Reduce el tamaño del texto */
+        letter-spacing: 2px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ESTILO PARA LA SEGUNDA SECCION */
+.section-two {
+    background-color: #3B98EF; /* Fondo azul */
+    padding: 30px 20px; /* Ajuste de padding */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 180px; /* Altura más pequeña */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 0px 15px #3B98EF; /* Sombra con bordes celestes difuminados */
+}
+
+/* Estilos del contenido */
+.content-wrapper {
+    position: relative;
+}
+
+/* Efecto de sombra 3D y animación en el título */
+.floating-title {
+    font-size: 70px; /* Tamaño grande */
+    font-family: Arial, sans-serif; /* Fuente Arial */
+    font-weight: bold;
+    color: white; /* Color blanco */
+    position: relative;
+    animation: float 3s ease-in-out infinite; /* Animación de flotación */
+    text-shadow: 
+        2px 2px 0 #000000,  /* Sombra negra detrás de la letra */
+        4px 4px 0 #666666,  /* Segunda sombra gris para mayor profundidad */
+        6px 6px 0 #333333;  /* Tercera sombra para un efecto 3D */
+}
+
+/* Animación de flotación suave */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 600px) {
+    .floating-title {
+        font-size: 40px; /* Reduce el tamaño del texto */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* TERCERA SECCION */
+.section-three {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: white;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    flex-direction: row; /* Mantener en fila en pantallas grandes */
+}
+
+/* Estilos para la parte izquierda (imagen dentro de un círculo más grande y centrado) */
+.left-side {
+    flex: 1.2; /* Menor ancho para la parte izquierda */
+    display: flex;
+    justify-content: center; /* Centrar el círculo horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.centered-image-container {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%; /* Hace que el contenedor sea circular */
+    background-color: white; /* Fondo blanco */
+    /* Borde degradado celeste */
+    border: 20px solid;
+    border-image: linear-gradient(45deg, #3B98EF, #00CFFD) 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.centered-image {
+    max-width: 100%;
+    height: auto;
+    animation: smooth-move 3s ease-in-out infinite;
+    
+}
+
+/* Animación para el movimiento suave de la imagen */
+@keyframes smooth-move {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px); /* Movimiento vertical suave */
+    }
+}
+
+.small-text {
+    font-size: 18px;
+    font-weight: 900;
+    color: black;
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para la parte derecha (texto) */
+.right-side {
+    flex: 1.8;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.section-title {
+    font-family: Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: black;
+    margin-bottom: 20px;
+    text-align: left;
+    text-shadow: 
+        1px 1px 0 #B3E5FC,
+        2px 2px 0 #81D4FA,
+        3px 3px 0 #4FC3F7,
+        4px 4px 0 #29B6F6,
+        5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.section-paragraph {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    line-height: 1.8;
+    text-align: justify;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .section-three {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        padding: 30px 15px;
+    }
+
+    .left-side,
+    .right-side {
+        flex: 1; /* Ambos lados ocupan el mismo espacio */
+        width: 100%; /* Asegurar que ocupen el ancho completo */
+    }
+
+    .centered-image-container {
+        width: 250px;
+        height: 250px; /* Reducir tamaño en pantallas pequeñas */
+    }
+
+    .section-title {
+        font-size: 28px; /* Reducir tamaño de fuente en pantallas pequeñas */
+        text-align: center;
+    }
+
+    .small-text,
+    .section-paragraph {
+        text-align: center; /* Centrar texto en pantallas pequeñas */
+    }
+
+    .section-paragraph {
+        font-size: 16px; /* Reducir tamaño de fuente en pantallas pequeñas */
+    }
+}
+
+
+
+
+
+/* CUARTO PARRAFO ESTILOS */
+.section-four {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+    padding: 20px 0;
+    height: 80vh; 
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para los cuadros */
+.box {
+    flex: 1;
+    padding: 20px;
+    margin: 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Primer y tercer cuadro con nuevo color celeste y bordes redondeados */
+.first-box, .third-box {
+    background: linear-gradient(135deg, #3B98EF, #5a87a5);
+    color: white; 
+    font-family: Arial, sans-serif;
+    height: 100%; 
+    border-radius: 20px;
+    text-align: center; 
+    padding-left: 50px; 
+    padding-right: 50px;
+}
+
+/* Estilos para el texto de los títulos "MISION" y "VISION" */
+.box-title {
+    font-weight: 900;
+    color: white;
+    text-shadow: 
+        1px 1px 1px rgba(0, 0, 0, 0.1),
+        2px 2px 2px rgba(0, 0, 0, 0.15),
+        3px 3px 3px rgba(0, 0, 0, 0.2),
+        4px 4px 4px rgba(0, 0, 0, 0.25),
+        5px 5px 5px rgba(0, 0, 0, 0.3);
+    font-size: 30px;
+}
+
+/* Centrado y justificado del texto */
+.box-paragraph {
+    font-size: 16px;
+    text-align: justify; 
+    font-weight: bold;
+    text-align-last: center;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para el cuadro del medio con la imagen */
+.middle-box {
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    height: 100%; 
+    flex: 1.4;
+    border-radius: 20px;
+    padding: 0;
+}
+
+/* Imagen ajustada completamente */
+.middle-image {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Efecto de hover */
+.middle-image:hover {
+    transform: scale(1.05);
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .section-four {
+        flex-direction: column; /* Cambia a disposición en columna */
+        height: auto;
+        padding: 10px;
+    }
+
+    .box {
+        height: auto; /* Permitir altura automática para cada cuadro */
+        padding: 15px;
+        margin-bottom: 20px; /* Espacio entre cuadros */
+    }
+
+    .first-box, .third-box {
+        padding: 20px; /* Ajuste de padding en pantallas pequeñas */
+    }
+
+    .box-title {
+        font-size: 24px; /* Reducir tamaño del título en pantallas pequeñas */
+    }
+
+    .box-paragraph {
+        font-size: 14px; /* Reducir tamaño de texto */
+        line-height: 1.4;
+    }
+
+    .middle-box {
+        height: 250px; /* Tamaño fijo para la imagen en pantallas pequeñas */
+        margin-bottom: 20px;
+    }
+
+    .middle-image {
+        border-radius: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

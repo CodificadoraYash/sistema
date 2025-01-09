@@ -1,0 +1,416 @@
+.product-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('img/fondococos.jpg'); /* Establece tu imagen de fondo aquí */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.contenido-texto {
+    z-index: 0; /* Asegura que el contenido esté sobre el fondo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+}
+
+.contenido-texto h1,
+.contenido-texto p {
+    animation: fadeIn 2s ease-in-out; /* Efecto de desvanecimiento */
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contenido-texto h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 
+        1px 1px 1px rgba(0, 0, 0, 0.1),
+        2px 2px 2px rgba(0, 0, 0, 0.15),
+        3px 3px 3px rgba(0, 0, 0, 0.2),
+        4px 4px 4px rgba(0, 0, 0, 0.25),
+        5px 5px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+
+.contenido-texto p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.subtitulo {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.1),
+    2px 2px 2px rgba(0, 0, 0, 0.15),
+    3px 3px 3px rgba(0, 0, 0, 0.2),
+    4px 4px 4px rgba(0, 0, 0, 0.25),
+    5px 5px 5px rgba(0, 0, 0, 0.3);
+    animation: elegantPulse 2s ease-in-out infinite;
+    text-transform: uppercase;
+}
+
+/* Animación de pulso para subtitulo */
+@keyframes elegantPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    box-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.1),
+    2px 2px 2px rgba(0, 0, 0, 0.15),
+    3px 3px 3px rgba(0, 0, 0, 0.2),
+    4px 4px 4px rgba(0, 0, 0, 0.25),
+    5px 5px 5px rgba(0, 0, 0, 0.3);
+    color: black;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: white;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Estilos responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenido-texto h1 {
+        font-size: 2rem;
+    }
+
+    .contenido-texto p {
+        font-size: 1rem;
+    }
+
+    .subtitulo {
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenido-texto h1 {
+        font-size: 1.5rem;
+    }
+
+    .contenido-texto p {
+        font-size: 0.9rem;
+    }
+
+    .subtitulo {
+        font-size: 1.2rem;
+    }
+
+    .button {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Contenedor principal de las tarjetas */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 70px;
+    margin: auto;
+    max-width: 1500px;
+}
+
+/* Estilos de cada tarjeta */
+.product-card {
+    background: white;
+    border-radius: 45px;
+    box-shadow: 
+        1px 1px 1px rgba(0, 0, 0, 0.1),
+        2px 2px 2px rgba(0, 0, 0, 0.15),
+        3px 3px 3px rgba(0, 0, 0, 0.2),
+        4px 4px 4px rgba(0, 0, 0, 0.25),
+        5px 5px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid #3B98EF; /* Borde celeste */
+    padding: 0;
+    max-width: 100%;
+}
+
+/* Imagen del producto */
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 35px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efecto hover para la imagen */
+.product-card:hover .product-image {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 128, 255, 0.4);
+}
+
+/* Estilo de los textos encima de la tarjeta */
+.product-title,
+.product-description {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-family: Arial, sans-serif;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin: 10px 0 5px 0;
+    text-transform: uppercase;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #3B98EF;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-item {
+        text-align: center;
+    }
+
+    .product-card {
+        background: white;
+        border-radius: 45px;
+        box-shadow: 
+            1px 1px 1px rgba(0, 0, 0, 0.1),
+            2px 2px 2px rgba(0, 0, 0, 0.15),
+            3px 3px 3px rgba(0, 0, 0, 0.2),
+            4px 4px 4px rgba(0, 0, 0, 0.25),
+            5px 5px 5px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 50px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        border: 10px solid #3B98EF;
+        align-items: center;
+        justify-content: center;
+        max-width: 90%;
+    }
+
+    .product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 35px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .product-card:hover .product-image {
+        transform: scale(1.1);
+        box-shadow: 0 20px 40px rgba(0, 128, 255, 0.4);
+    }
+
+    .product-text {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .product-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        margin: 5px 0;
+        text-transform: uppercase;
+        font-family: Arial, sans-serif;
+    }
+
+    .product-description {
+        font-size: 14px;
+        color: #3B98EF;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-family: Arial, sans-serif;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Sección con fondo de gradiente */
+.seccion-gracias {
+    background-color: #3B98EF;/* Fondo de gradiente azul celeste */
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px; /* Agrega margen interno */
+    overflow: hidden; /* Oculta el texto cuando sale de la pantalla */
+    border-radius: 10px; /* Bordes redondeados para un efecto visual */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para mayor profundidad */
+}
+
+/* Estilo para el texto de "Gracias por tu preferencia" */
+.texto-gracias {
+    font-size: 3rem;
+    color: white;
+    font-weight: 900;
+    text-shadow: 
+        1px 1px 1px rgba(0, 0, 0, 0.1),
+        2px 2px 2px rgba(0, 0, 0, 0.15),
+        3px 3px 3px rgba(0, 0, 0, 0.2),
+        4px 4px 4px rgba(0, 0, 0, 0.25),
+        5px 5px 5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+    animation: moverTexto 3s ease-in-out infinite; /* Ajusta el tiempo total */
+}
+
+/* Animación que mueve el texto hacia el centro, lo detiene y luego sigue */
+@keyframes moverTexto {
+    0% {
+        transform: translateX(100%); /* Comienza fuera de la pantalla a la derecha */
+        opacity: 0; /* Invisible */
+    }
+    10% {
+        transform: translateX(0); /* Llega al centro rápidamente */
+        opacity: 1; /* Aparece */
+    }
+    45% {
+        transform: translateX(0); /* Se mantiene en el centro */
+        opacity: 1; /* Visible */
+    }
+    50% {
+        transform: translateX(0); /* Pausa en el centro */
+        opacity: 1; 
+    }
+    55% {
+        transform: translateX(-100%); /* Comienza a moverse a la izquierda */
+        opacity: 1; /* Sigue visible */
+    }
+    100% {
+        transform: translateX(-200%); /* Fuera de la pantalla */
+        opacity: 0; /* Desaparece rápidamente */
+    }
+}
+
+/* Responsivo para pantallas medianas y pequeñas */
+@media (max-width: 768px) {
+    .seccion-gracias {
+        min-height: 150px; /* Ajusta la altura de la sección */
+        padding: 15px; /* Reduce el margen interno */
+    }
+
+    .texto-gracias {
+        font-size: 1.5rem; /* Reduce el tamaño de fuente */
+    }
+}
+
+@media (max-width: 480px) {
+    .seccion-gracias {
+        min-height: 120px; /* Ajusta la altura de la sección */
+        padding: 10px; /* Reduce el margen interno */
+    }
+
+    .texto-gracias {
+        font-size: 1.5rem; /* Reduce aún más el tamaño de fuente */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

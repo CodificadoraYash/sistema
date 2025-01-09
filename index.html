@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantaro Perú EIRL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://perumantaro.com/" />
+    <meta name="description" content="Mantaro Perú EIRL, empresa importadora y distribuidora líder en accesorios y tuberías en Perú.">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Mantaro Perú EIRL",
+          "url": "https://perumantaro.com",
+          "logo": "https://perumantaro.com/img/LOGO%20SOLO%20MANTARO.png"
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- TOPBAR -->
+<div class="topbar bg-dark text-light d-flex justify-content-between align-items-center p-3">
+    <div class="welcome-message" id="welcome-message">
+        Bienvenido(a) a Mantaro Perú EIRL | RUC 20610259473
+    </div>
+    <div class="social-icons d-flex flex-wrap">
+        <a href="https://www.facebook.com/share/FUp6RKW2GSbbbaHs/" class="social-icon facebook me-3" rel="noopener noreferrer">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" class="social-icon instagram me-3">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://youtube.com" class="social-icon youtube me-3">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://tiktok.com" class="social-icon tiktok me-3">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+</div>
+
+<!-- Audio element (hidden) -->
+<audio id="welcome-audio" src="audio/bienvenida.mp3" type="audio/mp3"></audio>
+
+<script>
+    // JavaScript para reproducir el audio cuando se hace clic en el mensaje de bienvenida
+    document.getElementById('welcome-message').addEventListener('click', function() {
+        const audio = document.getElementById('welcome-audio');
+        audio.play();
+    });
+</script>
+
+    <!-- NAV MENU -->
+    <nav>
+        <div class="logo-menu-container">
+            <div class="logo">
+                <a href="index.html"> <!-- Reemplaza con la URL a la que deseas que redirija -->
+                    <img src="img/LOGO SOLO MANTARO.png" alt="Logo">
+                </a>
+                <div class="logo-text">
+                    <span>IMPORTACIÓN</span>
+                    <span>MANTARO</span>
+                    <span>PERÚ E.I.R.L</span>
+                </div>
+            </div>
+
+            <div class="menu-icon" id="menu-icon">
+                <!-- Icono de menú hamburguesa -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="menu-center" id="menu-center">
+            <ul class="menu-row">
+                <li><a href="index.html" class="active">INICIO</a></li>
+                <li><a href="proyectos.html">PROYECTOS</a></li>
+                <li>
+                    <a href="servicios.html">SERVICIOS</a>
+                    <ul class="submenu">
+                        <li><a href="termofusion.html">TERMOFUSIÓN Y ELECTROFUSIÓN</a></li>
+                        <li><a href="servicio2.html">FABRICACIÓN DE ACCESORIOS EN HDPE, PPR Y PVC</a></li>
+                        <li><a href="servicio3.html">ASESORÍA TÉCNICA EN HDPE, PPR Y PVC</a></li>
+                    </ul>
+                </li>
+                <li><a href="nosotros.html">NOSOTROS</a></li>
+            </ul>
+            <ul class="menu-row">
+                <li>
+                    <a href="productos.html">PRODUCTOS</a>
+                    <ul class="submenu">
+                        <li><a href="acople.html">ACOPLE RÁPIDO</a></li>
+                        <li><a href="cemento.html">CEMENTO</a></li>
+                        <li><a href="conexionesHDPE.html">CONEXIONES HDPE</a></li>
+                        <li><a href="conexionesPP.html">CONEXIONES PP</a></li>
+                        <li><a href="conexionesPPH.html">CONEXIONES PPH</a></li>
+                        <li><a href="conexionesPPR.html">CONEXIONES PPR</a></li>
+                        <li><a href="conexionesPVC.html">CONEXIONES PVC</a></li>
+                        <li><a href="hierroDuctil.html">HIERRO DÚCTIL</a></li>
+                        <li><a href="maquinas.html">MÁQUINAS</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </div>
+        <div class="actions">
+            <a href="https://wa.me/51904188179" target="_blank">
+                <button class="cotizar">COTIZAR</button>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products" id="search-input">
+                <button class="search-btn" id="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <script>
+        // JavaScript para alternar el menú hamburguesa
+        const menuIcon = document.getElementById("menu-icon");
+        const menuCenter = document.getElementById("menu-center");
+
+        menuIcon.addEventListener("click", () => {
+            menuCenter.classList.toggle("active");
+        });
+    </script>
+
+    <script>
+        // JavaScript para el scroll del menu
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            const menuCenter = document.querySelector('.menu-center');
+
+            if (window.scrollY > 50) {
+                nav.classList.add('fixed-nav');
+                menuCenter.classList.add('single-row');  // Cambia a una sola fila
+            } else {
+                nav.classList.remove('fixed-nav');
+                menuCenter.classList.remove('single-row');  // Vuelve a dos filas
+            }
+        });
+    </script>
+    <!-- MENU VERTICAL FLOTANTE -->
+    <div class="social-menu">
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/share/FUp6RKW2GSbbbaHs/" class="facebook">
+                    <i class="fab fa-facebook-f"></i><span>Facebook</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com" class="instagram">
+                    <i class="fab fa-instagram"></i><span>Instagram</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://wa.me/51904188179" class="social-link whatsapp">
+                    <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://youtube.com" class="youtube">
+                    <i class="fab fa-youtube"></i><span>YouTube</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiktok.com" class="tiktok">
+                    <i class="fab fa-tiktok"></i><span>TikTok</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- SECCION 1 DEL CARRUSEL -->
+    <section>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <!-- Primer slider (Construcción) -->
+                <div class="carousel-item active">
+                    <div class="carousel-video-wrapper">
+                        <video id="video1" class="carousel-video d-block w-100" autoplay loop muted>
+                            <source src="video/construccion.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                        <div class="overlay-content">
+                            <div class="text-left">
+                                <h2 class="hover-grow sector">SECTOR</h2>
+                                <p class="hover-grow">CONSTRUCCIÓN</p>
+                                <a href="https://wa.me/51904188179" target="_blank">
+                                    <button class="btn-cotizar">AGENDAR</button>
+                                </a>
+                            </div>
+                            <div class="image-right">
+                                <img id="image1" src="img/CONSTRUCCION.png" Imagen" class="hover-grow large-image"
+                                    style="opacity: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segundo slider (Industria) -->
+                <div class="carousel-item">
+                    <div class="carousel-video-wrapper">
+                        <video id="video2" class="carousel-video d-block w-100" autoplay loop muted>
+                            <source src="video/Agricola.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                        <div class="overlay-content">
+                            <div class="text-left">
+                                <h2 class="hover-grow sector">SECTOR</h2>
+                                <p class="hover-grow">AGRÍCOLA</p>
+                                <a href="https://wa.me/51904188179" target="_blank">
+                                    <button class="btn-cotizar">AGENDAR</button>
+                                </a>
+                            </div>
+                            <div class="image-right">
+                                <img id="image2" src="img/AGRICOLA.png" Imagen class="hover-grow large-image"
+                                    style="opacity: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tercer slider (Energía) -->
+                <div class="carousel-item">
+                    <div class="carousel-video-wrapper">
+                        <video id="video3" class="carousel-video d-block w-100" autoplay loop muted>
+                            <source src="video/equipos.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                        <div class="overlay-content">
+                            <div class="text-left">
+                                <h2 class="hover-grow sector">EQUIPOS</h2>
+                                <a href="https://wa.me/51904188179" target="_blank">
+                                    <button class="btn-cotizar">AGENDAR</button>
+                                </a>
+                            </div>
+                            <div class="image-right">
+                                <img id="image3" src="img/MAQUINA.png" Imagen class="hover-grow large-image"
+                                    style="opacity: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cuarto slider (Tecnología) -->
+                <div class="carousel-item">
+                    <div class="carousel-video-wrapper">
+                        <video id="video4" class="carousel-video d-block w-100" autoplay loop muted>
+                            <source src="video/mineria.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                        <div class="overlay-content">
+                            <div class="text-left">
+                                <h2 class="hover-grow sector">SECTOR</h2>
+                                <p class="hover-grow">MINERO</p>
+                                <a href="https://wa.me/51904188179" target="_blank">
+                                    <button class="btn-cotizar">AGENDAR</button>
+                                </a>
+                            </div>
+                            <div class="image-right">
+                                <img id="image4" src="img/MINERO.png" alt="Imagen" class="hover-grow large-image"
+                                    style="opacity: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quinto slider (Agricultura) -->
+                <div class="carousel-item">
+                    <div class="carousel-video-wrapper">
+                        <video id="video5" class="carousel-video d-block w-100" autoplay loop muted>
+                            <source src="video/pesquero.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                        <div class="overlay-content">
+                            <div class="text-left">
+                                <h2 class="hover-grow sector">SECTOR</h2>
+                                <p class="hover-grow">PESQUERO</p>
+                                <a href="https://wa.me/51904188179" target="_blank">
+                                    <button class="btn-cotizar">AGENDAR</button>
+                                </a>
+                            </div>
+                            <div class="image-right">
+                                <img id="image5" src="img/PESQUERO.png" alt="Imagen" class="hover-grow large-image"
+                                    style="opacity: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Botones de navegación -->
+            <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next custom-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </section>
+    <script>
+        // Espera a que los videos estén completamente cargados antes de mostrar las imágenes
+        document.getElementById('video1').addEventListener('loadeddata', function () {
+            document.getElementById('image1').style.opacity = '1';
+        });
+        document.getElementById('video2').addEventListener('loadeddata', function () {
+            document.getElementById('image2').style.opacity = '1';
+        });
+        document.getElementById('video3').addEventListener('loadeddata', function () {
+            document.getElementById('image3').style.opacity = '1';
+        });
+        document.getElementById('video4').addEventListener('loadeddata', function () {
+            document.getElementById('image4').style.opacity = '1';
+        });
+        document.getElementById('video5').addEventListener('loadeddata', function () {
+            document.getElementById('image5').style.opacity = '1';
+        });
+    </script>
+    <!-- SEGUNDA SECCION: SIGUENOS EN NUESTRAS REDES SOCIALES -->
+    <section class="section-two">
+        <div class="content-wrapper">
+            <div class="content">
+                <h2 class="floating-title">
+                    SÍGUENOS EN NUESTRAS REDES SOCIALES
+                </h2>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/FUp6RKW2GSbbbaHs/" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- Eliminar Twitter y devolver TikTok -->
+                    <a href="https://www.tiktok.com" class="social-link">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.youtube.com" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Imagen flotante en el lado derecho -->
+        <img src="img/marca de agua.png" alt="Imagen decorativa" class="floating-image">
+    </section>
+    <!-- TERCERA SECCION DE CUADROS -->
+    <section class="features-section">
+        <div class="feature">
+            <div class="icon">
+                <img src="img/icono 01.png" alt="Respaldo">
+            </div>
+            <h3>ENVIOS A NIVEL NACIONAL</h3>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <img src="img/icono 02.png" alt="Catálogo Exclusivo">
+            </div>
+            <h3>PRODUCTOS DE CALIDAD</h3>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <img src="img/icono 03.png" alt="Equipo Capacitado">
+            </div>
+            <h3>MEJORES PRECIOS</h3>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <img src="img/icono 04.png" alt="Soluciones Inteligentes">
+            </div>
+            <h3>RESPALDO Y GARANTIA </h3>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <img src="img/icono 05.png" alt="Productos de Calidad">
+            </div>
+            <h3>MARCAS EXCLUSIVAS</h3>
+        </div>
+    </section>
+    <!-- CUARTA SECCION-->
+    <section class="two-column-section">
+        <div class="left-column">
+            <img src="img/cajas.jpg" alt="Transiciones HDPE/PP">
+        </div>
+        <div class="right-column animated-content">
+            <!-- Nuevo texto pequeño arriba de las letras grandes -->
+            <p class="small-text">IMPORTADORES Y DISTRIBUIDORES</p>
+
+            <h1>MANTARO PERÚ E.I.R.L</h1>
+            <div class="underline"></div>
+
+            <!-- Nuevo texto "Somos la mejor opción para tus proyectos" debajo del título -->
+            <p class="large-text">¡Somos la mejor opción para tus proyectos!</p>
+
+            <!-- Botones de acción uno al lado del otro -->
+            <div class="button-group">
+                <a href="https://wa.me/51904188179" class="button">CONTACTAR</a>
+                <a href="catalogo.html" class="button">CATÁLOGO</a>
+            </div>
+        </div>
+    </section>
+    <!-- QUINTA SECCION-->
+    <section class="image-slider-section">
+        <div class="slider-container">
+            <div class="image-slider">
+                <div class="image-item">
+                    <a href="conexionesPPR.html">
+                        <img src="img/slider 01.png" alt="Imagen 1">
+                    </a>
+                </div>
+                <div class="image-item">
+                    <a href="conexionesPPH.html">
+                        <img src="img/slider 02.png" alt="Imagen 2">
+                    </a>
+                </div>
+                <div class="image-item">
+                    <a href="acople.html">
+                        <img src="img/slider 03.png" alt="Imagen 3">
+                    </a>
+                </div>
+                <div class="image-item">
+                    <a href="conexionesPVC.html">
+                        <img src="img/slider 04.png" alt="Imagen 4">
+                    </a>
+                </div>
+                <div class="image-item">
+                    <a href="conexionesPP.html">
+                        <img src="img/slider 05.png" alt="Imagen 5">
+                    </a>
+                </div>
+                <!-- Duplicación para loop continuo -->
+                <div class="image-item">
+                    <a href="conexionesPPR.html">
+                        <img src="img/slider 01.png" alt="Imagen 1">
+                    </a>
+                </div>
+                <div class="image-item">
+                    <a href="conexionesPPH.html">
+                        <img src="img/slider 02.png" alt="Imagen 2">
+                    </a>
+                </div>
+                <div class="image-item">
+                    <a href="acople.html">
+                        <img src="img/slider 03.png" alt="Imagen 3">
+                    </a>
+                </div>
+                <div class="image-item">
+                    <a href="conexionesPVC.html">
+                        <img src="img/slider 04.png" alt="Imagen 4">
+                    </a>
+                </div>
+                <div class="image-item">
+                    <a href="conexionesPP.html">
+                        <img src="img/slider 05.png" alt="Imagen 5">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SEXTA SECCION-->
+    <section class="seccion-dividida">
+        <div class="texto-izquierda">
+            <button class="boton-innovacion">
+                <i class="fas fa-check-circle"></i> Innovación, Tecnología y Experiencia
+            </button>
+            <!-- Botón agregado -->
+            <h1>FIABILIDAD Y SEGURIDAD</h1>
+            <p>
+                Somos una empresa importadora, distribuidora y comercializadora con proyecciones y metas a un futuro muy
+                corto de ser líderes en proveer accesorios y tuberías para uso industrial, agrícola y construcción.
+            </p>
+            <p>
+                Todos los productos que abastecemos a nuestros clientes, ya sea mineras, industrias, tratadoras de agua,
+                agrícolas y constructoras se rigen a las diferentes normas y especificaciones técnicas que solicitan las
+                diferentes entidades reguladoras y certificadoras.
+            </p>
+        </div>
+        <div class="imagenes-derecha">
+            <img src="img/innovacion 01.png" alt="Imagen 1">
+            <img src="img/innovacion 02.png" alt="Imagen 2">
+            <img src="img/innovacion 03.png" alt="Imagen 3">
+            <img src="img/innovacion 04.png" alt="Imagen 4">
+        </div>
+    </section>
+    <!-- SEPTIMA SECCION-->
+    <section class="catalog-section">
+        <div class="catalog-images">
+            <img src="img/catalogo 01.png" alt="Catálogo 1" class="catalog-img">
+            <img src="img/catalogo 04.png" alt="Catálogo 2" class="catalog-img">
+        </div>
+        <div class="catalog-content">
+            <p class="catalog-subtitle">¡ENCUENTRA LO MEJOR!</p> <!-- Nuevo texto pequeño -->
+            <h1>MÁS CATÁLOGOS AQUÍ</h1>
+            <div class="catalog-actions">
+                <a href="catalogo.html" class="btn-acceder">ACCEDER</a>
+                <a href="https://wa.me/51904188179" class="consult-link">Consulta con tu asesor</a>
+            </div>
+        </div>
+    </section>
+    <!--OCTAVA SECCION-->
+    <section class="industrial-projects">
+        <div class="section-header">
+            <a href="proyectos.html" class="icon-link"> <!-- Enlace al ícono de libro -->
+                <i class="fas fa-book-open"></i>
+            </a>
+            <h2>PROYECTOS</h2>
+            <p class="section-subtitle">
+                PARA LAS GRANDES OBRAS INDUSTRIALES
+                SE NECESITAN PRODUCTOS DE ALTA CALIDAD
+            </p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-item">
+                <img src="img/proyecto 01.png" alt="Proyecto 1">
+            </div>
+            <div class="project-item">
+                <img src="img/proyecto 02.png" alt="Proyecto 2">
+            </div>
+            <div class="project-item">
+                <img src="img/proyecto 03.png" alt="Proyecto 3">
+            </div>
+        </div>
+    </section>
+    <!-- NOVENA SECCION-->
+    <section>
+        <div class="contenedor">
+            <div class="menu-izquierdo">
+                <ul>
+                    <li><a href="#" data-category="1">ACOPLE RÁPIDO</a></li>
+                    <li><a href="#" data-category="2">CEMENTO</a></li>
+                    <li><a href="#" data-category="3">CONEXIONES HDPE</a></li>
+                    <li><a href="#" data-category="4">CONEXIONES PP</a></li>
+                    <li><a href="#" data-category="5">CONEXIONES PPH</a></li>
+                    <li><a href="#" data-category="6">CONEXIONES PPR</a></li>
+                    <li><a href="#" data-category="7">CONEXIONES PVC</a></li>
+                    <li><a href="#" data-category="8">HIERRO DÚCTIL</a></li>
+                    <li><a href="#" data-category="9">MÁQUINAS</a></li>
+                </ul>
+            </div>
+
+            <div class="contenido-derecho">
+                <a href="productos.html">
+                    <h6>NUESTROS PRODUCTOS</h6>
+                </a>
+                <div id="circulos-contenedor-1" class="circulos-contenedor">
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/Acople 01.png" alt="Producto 1">
+                        </div>
+                        <p>ADAPTADOR ROSCA HEMBRA</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/Acople 02.png" alt="Producto 2">
+                        </div>
+                        <p>ADAPTADOR ROSCA MACHO</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/Acople 03.png" alt="Producto 3">
+                        </div>
+                        <p>CODO DE 90 ROSCA HEMBRA</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/Acople 04.png" alt="Producto 4">
+                        </div>
+                        <p>CODO DE 90 ROSCA MACHO</p>
+                    </div>
+                </div>
+
+                <div id="circulos-contenedor-2" class="circulos-contenedor" style="display: none;">
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/Cemento 01.png" alt="Producto 5">
+                        </div>
+                        <p>CEMENTO CPVC 8613</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/Cemento 02.png" alt="Producto 6">
+                        </div>
+                        <p>CEMENTO PVC L-6453</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/Cemento 03.png" alt="Producto 7">
+                        </div>
+                        <p>CEMENTO PVC L-3010 </p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/Cemento 04.png" alt="Producto 8">
+                        </div>
+                        <p>CEMENTO PVC L-5125</p>
+                    </div>
+                </div>
+
+                <div id="circulos-contenedor-3" class="circulos-contenedor" style="display: none;">
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/HDPE 01.png" alt="Producto 5">
+                        </div>
+                        <p>ASIENTO HDPE</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/HDPE 02.png" alt="Producto 6">
+                        </div>
+                        <p>CAMPANA HDPE BES+</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/HDPE 03.png" alt="Producto 7">
+                        </div>
+                        <p>CODO DE 22.5 KIT HDPE</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/HDPE 04.png" alt="Producto 8">
+                        </div>
+                        <p>CODO DE 22.5 HDPE BES+</p>
+                    </div>
+                </div>
+
+                <div id="circulos-contenedor-4" class="circulos-contenedor" style="display: none;">
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PPH 01.png" alt="Producto 5">
+                        </div>
+                        <p>CODO DE 45 PP</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PPH 02.png " alt="Producto 6">
+                        </div>
+                        <p>CODO DE 90 CON INJETO</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PPH 03.png" alt="Producto 7">
+                        </div>
+                        <p>REDUCCION EXCENTRICA</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PPH 04.png" alt="Producto 8">
+                        </div>
+                        <p>CODO DE 90 PP</p>
+                    </div>
+                </div>
+
+                <div id="circulos-contenedor-5" class="circulos-contenedor" style="display: none;">
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PP 01.png" alt="Producto 5">
+                        </div>
+                        <p>CODO DE 45 PPH PESTAN</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PP 02.png " alt="Producto 6">
+                        </div>
+                        <p>CODO DE 90 PPH PESTAN</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PP 03.png" alt="Producto 7">
+                        </div>
+                        <p>>REDUCCION EXCENTRICA</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PP 04.png" alt="Producto 8">
+                        </div>
+                        <p>TAPON HEMBRA PPH PESTAN</p>
+                    </div>
+                </div>
+
+                <div id="circulos-contenedor-6" class="circulos-contenedor" style="display: none;">
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PPR 01.png" alt="Producto 5">
+                        </div>
+                        <p>ADAPTADOR HEMBRA</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PPR 02.png " alt="Producto 6">
+                        </div>
+                        <p>ADAPTADOR MACHO</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PPR 03.png" alt="Producto 7">
+                        </div>
+                        <p>CHECK FUSION PPR</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PPR 04.png" alt="Producto 8">
+                        </div>
+                        <p>CODO DE 45 FUSION</p>
+                    </div>
+                </div>
+
+                <div id="circulos-contenedor-7" class="circulos-contenedor" style="display: none;">
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PVC 01.png" alt="Producto 5">
+                        </div>
+                        <p>ADAPTADOR SCH-80</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PVC 02.png " alt="Producto 6">
+                        </div>
+                        <p>BRIDA FIJA SCH-80</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PVC 03.png" alt="Producto 7">
+                        </div>
+                        <p>BRIDA LOCA SCH-80</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/PVC 04.png" alt="Producto 8">
+                        </div>
+                        <p>BUGE PVC MIXTO </p>
+                    </div>
+                </div>
+
+                <div id="circulos-contenedor-8" class="circulos-contenedor" style="display: none;">
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/hierro 01.png" alt="Producto 5">
+                        </div>
+                        <p>CHECK FLEX</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/hierro 02.png" alt="Producto 6">
+                        </div>
+                        <p>DUO CHECK</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/hierro 03.png" alt="Producto 7">
+                        </div>
+                        <p>FILTRO YEE </p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/hierro 04.png" alt="Producto 8">
+                        </div>
+                        <p>ADAPTADOR</p>
+                    </div>
+                </div>
+                <div id="circulos-contenedor-9" class="circulos-contenedor" style="display: none;">
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/maquina 01.png" alt="Producto 5">
+                        </div>
+                        <p>EXTRUSORA WELDY</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/maquina 02.png" alt="Producto 6">
+                        </div>
+                        <p>GRIOTECH 200mm</p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/maquina 03.png" alt="Producto 7">
+                        </div>
+                        <p>GRIOTECH 450mm </p>
+                    </div>
+                    <div class="circulo-contenedor">
+                        <div class="circulo">
+                            <img src="img/maquina 04.png" alt="Producto 8">
+                        </div>
+                        <p>GRIOTECH 63mm a 315mm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('.menu-izquierdo ul li a').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Ocultar todas las secciones de imágenes
+                document.querySelectorAll('.circulos-contenedor').forEach(function (section) {
+                    section.style.display = 'none';
+                });
+
+                // Quitar la clase 'activo' de todos los enlaces
+                document.querySelectorAll('.menu-izquierdo ul li a').forEach(function (item) {
+                    item.classList.remove('activo');
+                });
+
+                // Agregar la clase 'activo' al enlace clicado
+                this.classList.add('activo');
+
+                // Mostrar la sección correspondiente
+                var category = this.getAttribute('data-category');
+                document.getElementById('circulos-contenedor-' + category).style.display = 'flex';
+            });
+        });
+
+    </script>
+    <!-- DECIMA SECCION-->
+    <section>
+        <div class="container-fluid custom-section">
+            <div class="row h-100">
+                <!-- Parte izquierda con un solo video ocupando toda la sección izquierda -->
+                <div class="col-md-6 p-0 h-100 d-flex align-items-center">
+                    <video class="d-block w-100 h-100 video-full" autoplay muted loop>
+                        <source src="video/servicios.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+                <!-- Parte derecha con contenido centrado -->
+                <div class="col-md-6 d-flex justify-content-start align-items-center text-section bg-light-blue h-100">
+                    <div>
+                        <h2 class="title-3d">NUESTROS SERVICIOS</h2>
+                        <br>
+                        <p>✓ TERMOFUSIÓN ELECTROFUSIÓN</p>
+                        <p>✓ FABRICACIÓN DE ACCESORIOS EN HDPE, PPR Y PVC</p>
+                        <p>✓ ASESORÍA TÉCNICA EN HDPE, PPR Y PVC</p>
+                        <br>
+                        <a href="servicios.html">
+                            <button class="btn btn-3d">ACCEDER</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ALIADOS ESTRATEGICOS  -->
+    <section class="new-image-slider-section">
+        <h2>¡TRABAJAMOS CON ALIADOS ESTRATÉGICOS!</h2>
+        <div class="blue-line"></div>
+        <div class="new-slider-container">
+            <div class="new-image-slider">
+                <div class="new-image-item">
+                    <img src="img/aliado 01.png" alt="Imagen 1">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 02.png" alt="Imagen 2">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 03.png" alt="Imagen 3">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 04.png" alt="Imagen 4">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 05.png" alt="Imagen 5">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 06.png" alt="Imagen 6">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 07.png" alt="Imagen 7">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 08.png" alt="Imagen 8">
+                </div>
+                <!-- Duplicación para loop continuo -->
+                <div class="new-image-item">
+                    <img src="img/aliado 01.png" alt="Imagen 1">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 02.png" alt="Imagen 2">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 03.png" alt="Imagen 3">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 04.png" alt="Imagen 4">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 05.png" alt="Imagen 5">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 06.png" alt="Imagen 6">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 07.png" alt="Imagen 7">
+                </div>
+                <div class="new-image-item">
+                    <img src="img/aliado 08.png" alt="Imagen 8">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--FOOTER -->
+    <footer class="bg-black text-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Primera sección: Logo e íconos de redes sociales (20%) -->
+                <div class="col-2 d-flex flex-column align-items-center justify-content-center">
+                    <img src="img/LOGO SOLO MANTARO  BLANCO.png" alt="Logo" width="230" height="auto">
+                    <div class="social-icons mt-3 d-flex justify-content-center">
+                        <a href="https://www.facebook.com/share/FUp6RKW2GSbbbaHs/" class="text-facebook me-2">
+                            <i class="fab fa-facebook fa-1x"></i>
+                        </a>
+                        <a href="https://instagram.com" class="text-instagram me-2">
+                            <i class="fab fa-instagram fa-1x"></i>
+                        </a>
+                        <a href="https://youtube.com" class="text-youtube me-2">
+                            <i class="fab fa-youtube fa-1x"></i>
+                        </a>
+                        <a href="https://tiktok.com" class="text-tiktok">
+                            <i class="fab fa-tiktok fa-1x"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Segunda sección: Contacto y Links Directos (50%) -->
+                <div class="col-5 d-flex justify-content-around align-items-center">
+                    <div class="contact-info text-start">
+                        <p><i class="fas fa-envelope" style="color: #3B98EF;"></i> ventas@perumantaro.com</p>
+                        <br>
+                        <p><i class="fas fa-phone-alt" style="color: #3B98EF;"></i> +51 904 188 179</p>
+                        <p><i class="fas fa-phone-alt" style="color: #3B98EF;"></i> +51 986 894 928</p>
+                        <br>
+                        <p><i class="fas fa-map-marker-alt" style="color: #3B98EF;"></i> Carmelita Mz B Lt 37 Ñana - Lima - Perú</p>
+                    </div>
+                </div>
+
+
+                <!-- Tercera sección: Video (30%) -->
+                <div class="col-3 d-flex justify-content-center align-items-center">
+                    <video width="400" height="250" src="video/video footer.mp4" autoplay preload="auto" muted
+                        loop></video>
+                </div>
+                <!-- Línea divisoria -->
+                <hr class="division-line my-4">
+                <!-- Sección de Copyright centrada y bajada -->
+                <div class="copyright-section text-center mt-4">
+                    <p>&copy;2024 Mantaro Perú / Todos los derechos reservados</p>
+                </div>
+                <a href="MANTARO PERU E.I.R.L" class="float-button" id="chatbot-button">
+                    <img src="img/iconobot.png" alt="Chatbot Icon" id="chatbot-icon">
+                </a>
+                <div class="chat-window" id="chat-window">
+                    <div class="chat-header">
+                        <h4>MANTARO PERÚ E.I.R.L</h4>
+                    </div>
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Gracias por comunicarte con <b>MANTARO PERÚ E.I.R.L</b></p>
+                            <p>Por favor, haznos saber cómo podemos ayudarte.</p>
+                        </div>
+                    </div>
+                    <div class="chat-footer">
+                        <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+                        <button id="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                <a href="#" class="scroll-to-top">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scrip.js"></script>
+</body>
+</html>

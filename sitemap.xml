@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Página de Inicio -->
+    <url>
+        <loc>https://mantaroperu.com/</loc>
+        <lastmod>2024-11-13</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Página de Servicios -->
+    <url>
+        <loc>https://mantaroperu.com/servicios</loc>
+        <lastmod>2024-11-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Página de Proyectos -->
+    <url>
+        <loc>https://mantaroperu.com/proyectos</loc>
+        <lastmod>2024-11-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Página de Contacto -->
+    <url>
+        <loc>https://mantaroperu.com/contacto</loc>
+        <lastmod>2024-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Página de Nosotros -->
+    <url>
+        <loc>https://mantaroperu.com/nosotros</loc>
+        <lastmod>2024-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Página de Productos -->
+    <url>
+        <loc>https://mantaroperu.com/productos</loc>
+        <lastmod>2024-11-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Página de Catálogos -->
+    <url>
+        <loc>https://mantaroperu.com/catalogos</loc>
+        <lastmod>2024-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+</urlset>
+
